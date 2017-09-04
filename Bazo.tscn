@@ -1,12 +1,27 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://Bazo.gd" type="Script" id=1]
 [ext_resource path="res://K.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tegolaroj/Blokiloj.tres" type="TileSet" id=3]
-[ext_resource path="res://Butonoj/iri.png" type="Texture" id=4]
-[ext_resource path="res://Butonoj/turni_dekstre.png" type="Texture" id=5]
-[ext_resource path="res://Butonoj/turni_maldekstre.png" type="Texture" id=6]
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=7]
+[ext_resource path="res://Elementoj/Tempo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Elementoj/Nitrogeno.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Butonoj/iri.png" type="Texture" id=6]
+[ext_resource path="res://Butonoj/turni_dekstre.png" type="Texture" id=7]
+[ext_resource path="res://Butonoj/turni_maldekstre.png" type="Texture" id=8]
+[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=9]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.4, 0.6, 1, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
 
 [node name="Bazo" type="Node2D"]
 
@@ -17,7 +32,7 @@ script/script = ExtResource( 1 )
 transform/pos = Vector2( 449.134, 720.142 )
 transform/scale = Vector2( 2, 2 )
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TegolMapo" type="TileMap" parent="."]
 
 mode = 0
 tile_set = ExtResource( 3 )
@@ -33,14 +48,14 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( -1441798, 0, -1441797, 0, -1441796, 0, -1441795, 0, -1441794, 0, -1441793, 0, -1507328, 0, -1507325, 0, -1507324, 0, -1507323, 0, -1507322, 0, -1507321, 0, -1507320, 0, -1507319, 0, -1507317, 0, -1376263, 0, -1376261, 0, -1441783, 0, -1441782, 0, -1310726, 0, -1310725, 0, -1310721, 0, -1376253, 0, -1376249, 0, -1376247, 0, -1376245, 0, -1245191, 0, -1245189, 0, -1310711, 0, -1310710, 0, -1179654, 0, -1179653, 0, -1179651, 0, -1245183, 0, -1245179, 0, -1245175, 0, -1245173, 0, -1114119, 0, -1114117, 0, -1179639, 0, -1179638, 0, -1048582, 0, -1048581, 0, -1048577, 0, -1114109, 0, -1114105, 0, -1114103, 0, -1114101, 0, -983047, 0, -983045, 0, -1048567, 0, -1048566, 0, -917510, 0, -917509, 0, -917507, 0, -983039, 0, -983035, 0, -983031, 0, -983029, 0, -851975, 0, -851973, 0, -917495, 0, -917494, 0, -786438, 0, -786437, 0, -786433, 0, -851965, 0, -851961, 0, -851959, 0, -851957, 0, -720903, 0, -720901, 0, -786423, 0, -786422, 0, -655366, 0, -655365, 0, -655363, 0, -720895, 0, -720891, 0, -720887, 0, -720885, 0, -589831, 0, -589829, 0, -655351, 0, -655350, 0, -524294, 0, -524293, 0, -524289, 0, -589821, 0, -589817, 0, -589815, 0, -589813, 0, -458759, 0, -458757, 0, -524279, 0, -524278, 0, -393222, 0, -393221, 0, -393219, 0, -458751, 0, -458747, 0, -458743, 0, -458741, 0, -327687, 0, -327685, 0, -393207, 0, -393206, 0, -262150, 0, -262149, 0, -262145, 0, -327677, 0, -327673, 0, -327671, 0, -327669, 0, -196615, 0, -196613, 0, -262135, 0, -262134, 0, -131078, 0, -131077, 0, -131075, 0, -196607, 0, -196603, 0, -196599, 0, -196597, 0, -65543, 0, -65541, 0, -131063, 0, -131062, 0, -6, 0, -5, 0, -1, 0, -65533, 0, -65529, 0, -65527, 0, -65525, 0, 65529, 0, 65531, 0, 9, 0, 10, 0, 131066, 0, 131067, 0, 131069, 0, 65537, 0, 65541, 0, 65545, 0, 65547, 0, 196601, 0, 196603, 0, 131081, 0, 131082, 0, 262138, 0, 262139, 0, 262143, 0, 196615, 0, 196617, 0, 196619, 0, 327673, 0, 327675, 0, 262153, 0, 262154, 0, 393210, 0, 393211, 0, 393213, 0, 327681, 0, 327685, 0, 327689, 0, 327691, 0, 458745, 0, 458747, 0, 393225, 0, 393226, 0, 524282, 0, 524283, 0, 524287, 0, 458755, 0, 458759, 0, 458761, 0, 458763, 0, 589817, 0, 589819, 0, 524297, 0, 524298, 0, 655354, 0, 655355, 0, 655356, 0, 655357, 0, 655358, 0, 655359, 0, 589824, 0, 589825, 0, 589826, 0, 589827, 0, 589828, 0, 589829, 0, 589830, 0, 589831, 0, 589832, 0, 589833, 0, 589835, 0 )
+tile_data = IntArray( -1441797, 0, -1441796, 0, -1441795, 0, -1441794, 0, -1441793, 0, -1507328, 0, -1507325, 0, -1507324, 0, -1507323, 0, -1507322, 0, -1507321, 0, -1507320, 0, -1507319, 0, -1376261, 0, -1441783, 0, -1310725, 0, -1310722, 0, -1376256, 0, -1376252, 0, -1376249, 0, -1376247, 0, -1245189, 0, -1310711, 0, -1179653, 0, -1179651, 0, -1179649, 0, -1245183, 0, -1245179, 0, -1245177, 0, -1245175, 0, -1114117, 0, -1179639, 0, -1048581, 0, -1048578, 0, -1114112, 0, -1114110, 0, -1114108, 0, -1114106, 0, -1114103, 0, -983045, 0, -1048567, 0, -917509, 0, -917507, 0, -983039, 0, -983035, 0, -983031, 0, -851973, 0, -917495, 0, -786437, 0, -786434, 0, -786433, 0, -851965, 0, -851961, 0, -851959, 0, -720901, 0, -786430, 0, -786423, 0, -655365, 0, -655363, 0, -655362, 0, -720895, 0, -720891, 0, -720887, 0, -589829, 0, -655358, 0, -655351, 0, -524293, 0, -524290, 0, -524289, 0, -589821, 0, -589817, 0, -589815, 0, -458757, 0, -524286, 0, -524279, 0, -393221, 0, -393219, 0, -393218, 0, -458751, 0, -458747, 0, -458743, 0, -327685, 0, -393207, 0, -262149, 0, -327673, 0, -327671, 0, -196613, 0, -196610, 0, -262143, 0, -262135, 0, -131077, 0, -131075, 0, -196605, 0, -196599, 0, -65541, 0, -65538, 0, -131071, 0, -131067, 0, -131063, 0, -5, 0, -65533, 0, -65529, 0, -65527, 0, 65531, 0, 9, 0, 131067, 0, 131069, 0, 65537, 0, 65541, 0, 65545, 0, 196603, 0, 131081, 0, 262139, 0, 196617, 0, 327675, 0, 327678, 0, 262149, 0, 262151, 0, 262153, 0, 393211, 0, 327681, 0, 327689, 0, 458747, 0, 393225, 0, 524283, 0, 458755, 0, 458761, 0, 589819, 0, 524297, 0, 655355, 0, 655356, 0, 655357, 0, 655358, 0, 655359, 0, 589824, 0, 589825, 0, 589826, 0, 589827, 0, 589828, 0, 589829, 0, 589830, 0, 589831, 0, 589832, 0, 589833, 0 )
 
 [node name="Kamero" type="Camera2D" parent="."]
 
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 2, 2 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
@@ -54,12 +69,36 @@ drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 
-[node name="Tempo" type="Timer" parent="."]
+[node name="Tempilo" type="Timer" parent="."]
 
 process_mode = 1
-wait_time = 90.0
+wait_time = 15.0
 one_shot = false
 autostart = true
+
+[node name="Elementoj" type="Node2D" parent="."]
+
+[node name="Tempo" parent="Elementoj" instance=ExtResource( 4 )]
+
+[node name="Tempo1" parent="Elementoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 975.301, -842.691 )
+
+[node name="Tempo2" parent="Elementoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 149.088, -1612.01 )
+
+[node name="Nitrogeno" parent="Elementoj" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 400, 380 )
+
+[node name="Nitrogeno1" parent="Elementoj" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 720, -1580 )
+
+[node name="Nitrogeno2" parent="Elementoj" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 460, -680 )
 
 [node name="Kanvaso" type="CanvasLayer" parent="."]
 
@@ -86,22 +125,22 @@ margin/bottom = 1160.0
 
 visibility/opacity = 0.4
 transform/pos = Vector2( 524.776, 933.309 )
-normal = ExtResource( 4 )
-pressed = ExtResource( 4 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 6 )
 bitmask = null
 shape = null
 shape_centered = true
 shape_visible = true
 passby_press = false
-action = "iri"
+action = "rapidi"
 visibility_mode = 0
 
 [node name="Turnu_dekstre" type="TouchScreenButton" parent="Kanvaso/Kontroliloj"]
 
 visibility/opacity = 0.4
 transform/pos = Vector2( 241.108, 943.801 )
-normal = ExtResource( 5 )
-pressed = ExtResource( 5 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 7 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -114,8 +153,8 @@ visibility_mode = 0
 
 visibility/opacity = 0.4
 transform/pos = Vector2( -7.31604, 943.801 )
-normal = ExtResource( 6 )
-pressed = ExtResource( 6 )
+normal = ExtResource( 8 )
+pressed = ExtResource( 8 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -124,7 +163,7 @@ passby_press = false
 action = "turni_maldekstre"
 visibility_mode = 0
 
-[node name="Tempilo" type="Label" parent="Kanvaso"]
+[node name="Tempo" type="Label" parent="Kanvaso"]
 
 anchor/right = 1
 rect/scale = Vector2( 1.5, 1.5 )
@@ -136,7 +175,7 @@ margin/left = 279.0
 margin/top = 38.0
 margin/right = 360.0
 margin/bottom = 115.0
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0.917647, 0.917647, 0.917647, 1 )
 custom_colors/font_color_shadow = Color( 0.458824, 0.458824, 0.458824, 1 )
 custom_constants/shadow_as_outline = 1
@@ -145,6 +184,27 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[connection signal="pressed" from="Kanvaso/Kontroliloj/Iru" to="." method="_on_Iru_pressed"]
+[node name="Nitrogenoj" type="ProgressBar" parent="Kanvaso"]
+
+anchor/right = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 40.0
+custom_styles/fg = SubResource( 1 )
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 40.0
+range/exp_edit = false
+range/rounded = false
+percent/visible = false
+
+[connection signal="timeout" from="Tempilo" to="." method="_on_Tempo_timeout"]
 
 
