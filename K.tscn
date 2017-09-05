@@ -40,19 +40,21 @@ polygon = Vector2Array( 30, 0, 20, 20, -30, 20, -30, -20, 20, -20 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
-[node name="Particles2D" type="Particles2D" parent="."]
+[node name="Fumo" type="Particles2D" parent="."]
 
-visibility/opacity = 0.4
+visibility/opacity = 0.3
 config/amount = 32
-config/lifetime = 2.0
+config/lifetime = 0.15
+config/preprocess = 1.0
 config/process_mode = 1
-config/offset = Vector2( -38, 0 )
-config/half_extents = Vector2( 2, 5 )
-config/explosiveness = 0.93
+config/offset = Vector2( -40, 0 )
+config/half_extents = Vector2( 2, 7 )
+config/local_space = false
+config/explosiveness = 0.88
 config/texture = ExtResource( 2 )
 params/direction = 270.0
 params/spread = 7.3
-params/linear_velocity = 30.0
+params/linear_velocity = 10.0
 params/spin_velocity = 0.0
 params/orbit_velocity = 0.0
 params/gravity_direction = 0.0
@@ -61,8 +63,8 @@ params/radial_accel = 0.0
 params/tangential_accel = 0.0
 params/damping = 0.0
 params/initial_angle = 0.0
-params/initial_size = 0.1
-params/final_size = 0.3
+params/initial_size = 0.3
+params/final_size = 0.7
 params/hue_variation = 0.0
 params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0

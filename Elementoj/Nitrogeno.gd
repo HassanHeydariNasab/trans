@@ -13,5 +13,7 @@ func _on_Area2D_body_enter( korpo ):
 		Kasxi.start()
 
 func _on_Kasxi_tween_complete( object, key ):
-	Tutmonda.K.nitrogenoj += 40
+	Tutmonda.K.nitrogenoj += 60
+	if Tutmonda.K.nitrogenoj > 200:
+		Tutmonda.K.nitrogenoj = 200
 	queue_free()

@@ -3,4 +3,4 @@ extends Node
 var K = null
 var Tempilo = null
 
-var nivelo = -1
+var nivelo = 0
