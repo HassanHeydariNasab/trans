@@ -13,16 +13,32 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 150.0
+margin/left = 200.0
 margin/top = 600.0
 margin/right = 800.0
-margin/bottom = 850.0
+margin/bottom = 800.0
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "Rekomencu"
+flat = false
+
+[node name="Niveloj" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 950.0
+margin/right = 800.0
+margin/bottom = 1200.0
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Niveloj"
 flat = false
 
 [node name="Kialo" type="Polygon2D" parent="."]
@@ -52,12 +68,14 @@ margin/right = 90.0
 margin/bottom = 327.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "La tempo finigxis!"
+text = "Tempo finigxis!"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
 [connection signal="pressed" from="Rekomencu" to="." method="_on_Rekomencu_pressed"]
+
+[connection signal="pressed" from="Niveloj" to="." method="_on_Niveloj_pressed"]
 
 

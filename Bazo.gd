@@ -6,7 +6,8 @@ onready var Tempilo = get_node("Tempilo")
 onready var Tempo = get_node("Kanvaso/Tempo")
 onready var Nitrogenoj = get_node("Kanvaso/Nitrogenoj")
 onready var Montrilo = get_node("Kanvaso/Montrilo/Montrilo")
-onready var Finejo = get_node("Finejo")
+onready var FPS = get_node("Kanvaso/FPS")
+onready var Finejo = get_node("Nivelo/Finejo")
 
 var agordejo = "user://agordejo.cfg"
 onready var Agordejo = ConfigFile.new()
@@ -18,6 +19,8 @@ var sekundo = 0
 var L = Vector2()
 
 func _ready():
+	Tutmonda.Tempilo = get_tree().get_root().get_node("/root/Bazo/Tempilo")
+	Tutmonda.K = get_tree().get_root().get_node("/root/Bazo/K")
 	get_tree().set_auto_accept_quit(false)
 	Agordejo.load(agordejo)
 	var lingvo_indekso = Agordejo.get_value("Lingvo", "lingvo")
@@ -34,6 +37,7 @@ func _notification(what):
 		get_tree().change_scene("res://Niveloj.tscn")
 
 func _process(delta):
+	FPS.set_text(str(int(1.0/delta)))
 	tempo = int(Tempilo.get_time_left())
 	minuto = "%02d" % (tempo/60)
 	sekundo = "%02d" % (tempo%60)

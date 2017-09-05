@@ -21,3 +21,6 @@ func _on_Sxangxu_lingvon_pressed():
 func _on_P1N1_pressed():
 	Tutmonda.nivelo = 1
 	get_tree().change_scene("res://Bazo.tscn")
+
+func _on_Pri_pressed():
+	get_tree().change_scene("res://Pri.tscn")

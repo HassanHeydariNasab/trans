@@ -1,14 +1,23 @@
 extends KinematicBody2D
 
 onready var Fumo = get_node("Fumo")
+onready var Fortigxi = get_node("Fortigxi")
+onready var Aspekto = get_node("Aspekto")
+onready var Tempilo_forto = get_node("Tempilo_forto")
 
 const RAPIDO = 4
 const RAPIDEGO = 5
 var nitrogenoj = 0
 
 func _ready():
-	Tutmonda.K = get_tree().get_root().get_node("/root/Bazo/K")
-	Tutmonda.Tempilo = get_tree().get_root().get_node("/root/Bazo/Tempilo")
+	Fortigxi.interpolate_property(Aspekto, "modulate",
+	Color("000000"), Color("B71C1C"),
+	0.3, Tween.TRANS_QUART, Tween.TRANS_LINEAR
+	)
+	Fortigxi.interpolate_property(Aspekto, "modulate",
+	Color("B71C1C"), Color("000000"),
+	0.5, Tween.TRANS_QUART, Tween.TRANS_LINEAR
+	)
 	set_process(true)
 
 func _process(delta):
@@ -23,3 +32,13 @@ func _process(delta):
 		rotate(deg2rad(-4))
 	elif Input.is_action_pressed("turni_maldekstre"):
 		rotate(deg2rad(4))
+
+func fortigxi():
+	set_collision_mask_bit(0,false)
+	Fortigxi.resume(Aspekto, "modulate")
+	Tempilo_forto.start()
+
+func _on_Tempilo_forto_timeout():
+	set_collision_mask_bit(0,true)
+	Fortigxi.stop(Aspekto, "modulate")
+	Aspekto.set("modulate", "000000")
