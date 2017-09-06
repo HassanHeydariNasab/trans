@@ -1,5 +1,6 @@
 extends Node2D
 
+onready var Bazo = get_tree().get_root().get_node("/root/Bazo")
 onready var Kasxi = get_node("Kasxi")
 onready var Aspekto = get_node("Aspekto")
 onready var tempo1 = preload("res://Elementoj/tempo1.png")
@@ -23,6 +24,6 @@ func _on_Area2D_body_enter( korpo ):
 		Kasxi.start()
 
 func _on_Kasxi_tween_complete( object, key ):
-	Tutmonda.Tempilo.set_wait_time(Tutmonda.Tempilo.get_time_left()+TIPO*5)
-	Tutmonda.Tempilo.start()
+	Bazo.Tempilo.set_wait_time(Bazo.Tempilo.get_time_left()+TIPO*5)
+	Bazo.Tempilo.start()
 	queue_free()

@@ -7,11 +7,10 @@ onready var Tempo = get_node("Kanvaso/Tempo")
 onready var Nitrogenoj = get_node("Kanvaso/Nitrogenoj")
 onready var Montrilo = get_node("Kanvaso/Montrilo/Montrilo")
 onready var FPS = get_node("Kanvaso/FPS")
-onready var Finejo = get_node("Nivelo/Finejo")
+onready var Finejo = null
 
 var agordejo = "user://agordejo.cfg"
 onready var Agordejo = ConfigFile.new()
-const lingvoj = ["eo", "en"]
 
 var tempo = 0
 var minuto = 0
@@ -19,17 +18,17 @@ var sekundo = 0
 var L = Vector2()
 
 func _ready():
-	Tutmonda.Tempilo = get_tree().get_root().get_node("/root/Bazo/Tempilo")
-	Tutmonda.K = get_tree().get_root().get_node("/root/Bazo/K")
 	get_tree().set_auto_accept_quit(false)
 	Agordejo.load(agordejo)
-	var lingvo_indekso = Agordejo.get_value("Lingvo", "lingvo")
-	if TranslationServer.get_locale() != lingvoj[lingvo_indekso]:
-		TranslationServer.set_locale(lingvoj[lingvo_indekso])
-		get_tree().reload_current_scene()
 	tempo = int(Tempilo.get_time_left())
 	K.set_global_pos(Vector2(450,500))
 	K.set_global_rot(deg2rad(90))
+	add_child(load("res://Niveloj/Nivelo%d.tscn" % Tutmonda.nivelo).instance())
+	var Nivelo = get_node("Nivelo")
+	Tempilo.set_wait_time(Nivelo.tempo)
+	Tempilo.start()
+	move_child(Nivelo,0)
+	Finejo = Nivelo.get_node("Finejo")
 	set_process(true)
 
 func _notification(what):
@@ -45,10 +44,7 @@ func _process(delta):
 	Kamero.set_offset(K.get_global_pos()+Vector2(0,-100))
 	Nitrogenoj.set_value(K.nitrogenoj)
 	L = Finejo.get_global_pos() - K.get_global_pos()
-	if L.x > 0:
-		Montrilo.set_rot(atan(-L.y/L.x)+deg2rad(180))
-	else:
-		Montrilo.set_rot(atan(-L.y/L.x))
+	Montrilo.set_rot(atan2(L.x,L.y))
 
 func _on_Tempo_timeout():
 	get_tree().change_scene("res://Malvenkigxi.tscn")

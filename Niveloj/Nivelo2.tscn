@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://Elementoj/Finejo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tegolaroj/Blokiloj.tres" type="TileSet" id=2]
+[ext_resource path="res://Elementoj/Tempo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Elementoj/Nitrogeno.tscn" type="PackedScene" id=4]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node2D
+
+const tempo = 20"
+
+[node name="Nivelo" type="Node2D"]
+
+script/script = SubResource( 1 )
+
+[node name="Finejo" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 3470, -1810 )
+
+[node name="Blokilo" type="TileMap" parent="."]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell/size = Vector2( 128, 128 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 0
+occluder/light_mask = 1
+tile_data = IntArray( -917498, 0, -917492, 0, -917486, 0, -917480, 0, -851962, 0, -851956, 0, -851950, 0, -851944, 0, -786429, 0, -786423, 0, -786417, 0, -786411, 0, -720887, 0, -720881, 0, -720875, 0, -589823, 0, -589822, 0, -393213, 0, -393212, 0, -196607, 0, -196606, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Limo" type="TileMap" parent="."]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell/size = Vector2( 128, 128 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1024
+collision/mask = 2
+occluder/light_mask = 1
+tile_data = IntArray( -983040, 0, -983039, 0, -983038, 0, -983037, 0, -983036, 0, -983035, 0, -983034, 0, -983033, 0, -983032, 0, -983031, 0, -983030, 0, -983029, 0, -983028, 0, -983027, 0, -983026, 0, -983025, 0, -983024, 0, -983023, 0, -983022, 0, -983021, 0, -983020, 0, -983019, 0, -983018, 0, -983017, 0, -983016, 0, -983015, 0, -983012, 0, -983011, 0, -983010, 0, -917504, 0, -917474, 0, -851968, 0, -851938, 0, -786432, 0, -786402, 0, -720896, 0, -720866, 0, -655360, 0, -655355, 0, -655354, 0, -655353, 0, -655352, 0, -655351, 0, -655350, 0, -655349, 0, -655348, 0, -655347, 0, -655346, 0, -655345, 0, -655344, 0, -655343, 0, -655342, 0, -655341, 0, -655340, 0, -655339, 0, -655338, 0, -655337, 0, -655336, 0, -655335, 0, -655334, 0, -655333, 0, -655332, 0, -655331, 0, -655330, 0, -589824, 0, -589819, 0, -524288, 0, -524283, 0, -458752, 0, -458747, 0, -393216, 0, -393211, 0, -327680, 0, -327675, 0, -262144, 0, -262139, 0, -196608, 0, -196603, 0, -131072, 0, -131067, 0, -65536, 0, -65531, 0, 0, 0, 5, 0, 65536, 0, 65541, 0, 131072, 0, 131077, 0, 196608, 0, 196613, 0, 262144, 0, 262149, 0, 327680, 0, 327685, 0, 393216, 0, 393221, 0, 458752, 0, 458753, 0, 458754, 0, 458755, 0, 458756, 0, 458757, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Elementoj" type="Node2D" parent="."]
+
+[node name="Tempo" parent="Elementoj" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 270, -1660 )
+
+[node name="Nitrogeno1" parent="Elementoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 390, -520 )
+
+

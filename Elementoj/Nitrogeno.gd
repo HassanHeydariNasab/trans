@@ -1,5 +1,7 @@
 extends Node2D
 
+onready var Bazo = get_tree().get_root().get_node("/root/Bazo")
+
 onready var Kasxi = get_node("Kasxi")
 
 func _ready():
@@ -13,7 +15,7 @@ func _on_Area2D_body_enter( korpo ):
 		Kasxi.start()
 
 func _on_Kasxi_tween_complete( object, key ):
-	Tutmonda.K.nitrogenoj += 60
-	if Tutmonda.K.nitrogenoj > 200:
-		Tutmonda.K.nitrogenoj = 200
+	Bazo.K.nitrogenoj += 60
+	if Bazo.K.nitrogenoj > 200:
+		Bazo.K.nitrogenoj = 200
 	queue_free()

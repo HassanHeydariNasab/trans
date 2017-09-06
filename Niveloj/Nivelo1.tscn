@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://Elementoj/Finejo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tegolaroj/Blokiloj.tres" type="TileSet" id=2]
+[ext_resource path="res://Elementoj/Tempo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Elementoj/Nitrogeno.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Elementoj/Forto.tscn" type="PackedScene" id=5]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node2D
+
+const tempo = 20"
+
+[node name="Nivelo" type="Node2D"]
+
+script/script = SubResource( 1 )
+
+[node name="Finejo" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 265, -2880 )
+
+[node name="Blokilo" type="TileMap" parent="."]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell/size = Vector2( 128, 128 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 0
+occluder/light_mask = 1
+tile_data = IntArray( -1114112, 0, -1114111, 0, -1114110, 0, -1114109, 0, -1114108, 0, -1114107, 0, -1114106, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Limo" type="TileMap" parent="."]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell/size = Vector2( 128, 128 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1024
+collision/mask = 2
+occluder/light_mask = 1
+tile_data = IntArray( -1441793, 0, -1507328, 0, -1507325, 0, -1507324, 0, -1507323, 0, -1507322, 0, -1507321, 0, -1376257, 0, -1441785, 0, -1310721, 0, -1376249, 0, -1245185, 0, -1310713, 0, -1179649, 0, -1245177, 0, -1114113, 0, -1179641, 0, -1048577, 0, -1114105, 0, -983041, 0, -1048569, 0, -917505, 0, -983033, 0, -851969, 0, -917497, 0, -786433, 0, -851961, 0, -720897, 0, -786425, 0, -655361, 0, -720889, 0, -589825, 0, -655353, 0, -524289, 0, -589817, 0, -458753, 0, -524281, 0, -393217, 0, -458745, 0, -327681, 0, -393209, 0, -262145, 0, -327673, 0, -196609, 0, -262137, 0, -131073, 0, -196601, 0, -65537, 0, -131065, 0, -1, 0, -65529, 0, 65535, 0, 7, 0, 131071, 0, 65543, 0, 196607, 0, 131079, 0, 262143, 0, 196615, 0, 327679, 0, 262151, 0, 393215, 0, 327687, 0, 458751, 0, 393223, 0, 524287, 0, 458752, 0, 458753, 0, 458754, 0, 458755, 0, 458756, 0, 458757, 0, 458758, 0, 458759, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Elementoj" type="Node2D" parent="."]
+
+[node name="Tempo" parent="Elementoj" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 390, -530 )
+
+[node name="Tempo2" parent="Elementoj" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 750, -2540 )
+
+[node name="Nitrogeno1" parent="Elementoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 530, -1210 )
+
+[node name="Forto" parent="Elementoj" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 280, -1940 )
+
+[node name="Forto1" parent="Elementoj" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 660, -1930 )
+
+
