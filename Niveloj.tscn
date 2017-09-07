@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Niveloj.gd" type="Script" id=1]
 [ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://Tiparoj/purisa.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://Elementoj/nova_rekordo_EO.tex" type="Texture" id=4]
+[ext_resource path="res://Sonoj/178886__martian__red-whoosh-gladiator-04.ogg" type="AudioStream" id=5]
 
 [node name="Niveloj" type="Control"]
 
@@ -153,7 +155,6 @@ playback/speed = 1.0
 
 [node name="Niveloj" type="Control" parent="."]
 
-editor/display_folded = true
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = false
@@ -167,7 +168,6 @@ margin/bottom = -60.0
 
 [node name="N1" type="Button" parent="Niveloj"]
 
-editor/display_folded = true
 rect/min_size = Vector2( 100, 150 )
 rect/scale = Vector2( 0.7, 0.7 )
 focus/ignore_mouse = false
@@ -196,7 +196,7 @@ margin/top = 14.0
 margin/right = 586.0
 margin/bottom = 129.0
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.917647, 0.917647, 0.917647, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 0
 text = "+123"
@@ -213,7 +213,7 @@ transform/pos = Vector2( -401.429, -214 )
 transform/scale = Vector2( 1.42857, 1.42857 )
 polygon = Vector2Array( 280, 150, 420, 150, 410, 230, 280, 230 )
 uv = Vector2Array(  )
-color = Color( 0.458824, 0.458824, 0.458824, 1 )
+color = Color( 0.611765, 0.8, 0.396078, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
 texture/texture = null
@@ -225,7 +225,6 @@ invert/border = 100.0
 
 [node name="N2" type="Button" parent="Niveloj"]
 
-editor/display_folded = true
 rect/min_size = Vector2( 400, 150 )
 rect/scale = Vector2( 0.7, 0.7 )
 focus/ignore_mouse = false
@@ -254,7 +253,7 @@ margin/top = 14.0
 margin/right = 581.0
 margin/bottom = 129.0
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.917647, 0.917647, 0.917647, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 0
 text = "+123"
@@ -271,7 +270,7 @@ transform/pos = Vector2( -395, -214 )
 transform/scale = Vector2( 1.42857, 1.42857 )
 polygon = Vector2Array( 280, 150, 420, 150, 410, 230, 280, 230 )
 uv = Vector2Array(  )
-color = Color( 0.458824, 0.458824, 0.458824, 1 )
+color = Color( 0.611765, 0.8, 0.396078, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
 texture/texture = null
@@ -283,7 +282,6 @@ invert/border = 100.0
 
 [node name="N3" type="Button" parent="Niveloj"]
 
-editor/display_folded = true
 rect/min_size = Vector2( 400, 150 )
 rect/scale = Vector2( 0.7, 0.7 )
 focus/ignore_mouse = false
@@ -312,7 +310,7 @@ margin/top = 14.0
 margin/right = 580.0
 margin/bottom = 129.0
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.917647, 0.917647, 0.917647, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 0
 text = "+123"
@@ -329,7 +327,7 @@ transform/pos = Vector2( -395.429, -214 )
 transform/scale = Vector2( 1.42857, 1.42857 )
 polygon = Vector2Array( 280, 150, 420, 150, 410, 230, 280, 230 )
 uv = Vector2Array(  )
-color = Color( 0.458824, 0.458824, 0.458824, 1 )
+color = Color( 0.611765, 0.8, 0.396078, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
 texture/texture = null
@@ -338,6 +336,30 @@ texture/scale = Vector2( 1, 1 )
 texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
+
+[node name="Novrekordo" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 480, 480 )
+texture = ExtResource( 4 )
+
+[node name="Aperi" type="Tween" parent="Novrekordo"]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Sono" type="StreamPlayer" parent="Novrekordo"]
+
+stream/stream = ExtResource( 5 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 5.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 [connection signal="pressed" from="Sxangxu_lingvon" to="." method="_on_Sxangxu_lingvon_pressed"]
 

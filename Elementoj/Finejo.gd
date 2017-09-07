@@ -16,4 +16,5 @@ func _on_Finejo_body_enter( korpo ):
 				int(Bazo.Tempilo.get_time_left())
 			)
 			Agordejo.save(agordejo)
+			Tutmonda.rekordita = true
 		get_tree().change_scene("res://Niveloj.tscn")

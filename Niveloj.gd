@@ -25,6 +25,17 @@ func _ready():
 	var Niveloj__ = Niveloj.get_children()
 	for Nivelo in Niveloj__:
 		N = Nivelo.get_name().substr(1,3)
+		if Tutmonda.rekordita and int(N) == Tutmonda.nivelo:
+			var Novrekordo = get_node("Novrekordo")
+			var Novrekordo_Aperi = Novrekordo.get_node("Aperi")
+			Novrekordo.set_global_pos(Nivelo.get_global_pos()+Vector2(487,60))
+			Novrekordo_Aperi.interpolate_property(Novrekordo, "transform/scale",
+			Vector2(5,5), Vector2(0.7,0.7),
+			0.75, Tween.TRANS_QUINT, Tween.EASE_IN
+			)
+			Novrekordo_Aperi.start()
+			Novrekordo.show()
+			Novrekordo.get_node("Sono").play()
 		Nivelo.get_node("Tempo").set_text(
 			str(Agordejo.get_value("Niveloj", N, 0))+"s"
 		)	
@@ -37,9 +48,11 @@ func _ready():
 	)
 
 func _on_Sxangxu_lingvon_pressed():
+	Tutmonda.rekordita = false
 	get_tree().change_scene("res://Lingvo.tscn")
 
 func _on_Pri_pressed():
+	Tutmonda.rekordita = false
 	get_tree().change_scene("res://Pri.tscn")
 
 func _on_Nivelo_pressed(Nivelo):
@@ -47,6 +60,7 @@ func _on_Nivelo_pressed(Nivelo):
 	var bezonita_tempo = bezonitaj_tempoj[nivelo]
 	if sumo >= bezonita_tempo:
 		Tutmonda.nivelo = nivelo
+		Tutmonda.rekordita = false
 		get_tree().change_scene("res://Bazo.tscn")
 	else:
 		Konservu.get_node("Mesagxo").set_text(tr("Pliu vian konservitan tempon al")+" "+str(bezonita_tempo)+"s")

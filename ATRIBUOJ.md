@@ -1,8 +1,9 @@
 # Sonoj
 
-Koliziado: http://freesound.org/people/cinningbao/sounds/365623/
-Nitrogeno: http://freesound.org/people/barraacka/sounds/340833/
+Koliziado: https://freesound.org/people/cinningbao/sounds/365623/
+Nitrogeno: https://freesound.org/people/barraacka/sounds/340833/
 Forto: https://freesound.org/people/Eric1223/sounds/197355/
+Nova Rekordo: https://freesound.org/people/martian/sounds/178886/
 
 # Muzikoj
 

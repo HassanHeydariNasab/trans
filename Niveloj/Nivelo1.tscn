@@ -36,7 +36,7 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 0
 occluder/light_mask = 1
-tile_data = IntArray( -1114112, 0, -1114111, 0, -1114110, 0, -1114109, 0, -1114108, 0, -1114107, 0, -1114106, 0 )
+tile_data = IntArray( -1114112, 0, -1114111, 0, -1114110, 0, -1114109, 0, -1114108, 0, -1114107, 0, -1114106, 0, -458752, 0, -458751, 0, -458750, 0, -458749, 0, -196605, 0, -196604, 0, -196603, 0, -196602, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -66,7 +66,7 @@ __meta__ = {
 
 [node name="Tempo" parent="Elementoj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 390, -530 )
+transform/pos = Vector2( 430, -570 )
 
 [node name="Tempo2" parent="Elementoj" instance=ExtResource( 3 )]
 

@@ -1,3 +1,4 @@
 extends Node
 
-var nivelo = 0
+var nivelo = 1
+var rekordita = false

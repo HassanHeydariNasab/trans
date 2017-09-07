@@ -12,12 +12,12 @@
 [ext_resource path="res://Muzikoj/Kevin_MacLeod_-_04_-_Presenterator.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Sonoj/365623__cinningbao__0804-094043-metal-grinding-or-drilling-30secs.ogg" type="AudioStream" id=11]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 135.0
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=2]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -67,7 +67,6 @@ autostart = false
 
 [node name="Kanvaso" type="CanvasLayer" parent="."]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -75,6 +74,7 @@ scale = Vector2( 1, 1 )
 
 [node name="Kontroliloj" type="Control" parent="Kanvaso"]
 
+editor/display_folded = true
 anchor/top = 1
 anchor/right = 1
 anchor/bottom = 1
@@ -94,7 +94,7 @@ transform/pos = Vector2( 520, 920 )
 normal = ExtResource( 3 )
 pressed = ExtResource( 4 )
 bitmask = null
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 shape_centered = true
 shape_visible = true
 passby_press = false
@@ -142,8 +142,9 @@ margin/top = 38.0
 margin/right = 360.0
 margin/bottom = 115.0
 custom_fonts/font = ExtResource( 9 )
-custom_colors/font_color = Color( 0.917647, 0.917647, 0.917647, 1 )
-custom_colors/font_color_shadow = Color( 0.458824, 0.458824, 0.458824, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
 custom_constants/shadow_as_outline = 1
 text = "00:00"
 percent_visible = 1.0
@@ -161,7 +162,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 40.0
-custom_styles/fg = SubResource( 1 )
+custom_styles/fg = SubResource( 2 )
 range/min = 0.0
 range/max = 200.0
 range/step = 1.0
