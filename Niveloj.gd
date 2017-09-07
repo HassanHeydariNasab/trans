@@ -23,7 +23,6 @@ func _ready():
 	get_tree().set_auto_accept_quit(true)
 	var N = 0
 	var Niveloj__ = Niveloj.get_children()
-	print(Niveloj__)
 	for Nivelo in Niveloj__:
 		N = Nivelo.get_name().substr(1,3)
 		Nivelo.get_node("Tempo").set_text(
@@ -36,9 +35,6 @@ func _ready():
 	Kasxi.interpolate_property(Konservu, "visibility/opacity", 1,0,
 		2, Tween.TRANS_QUINT, Tween.EASE_IN
 	)
-
-func _on_Kodo_pressed():
-	OS.shell_open("https://github.com/HassanHeydariNasab/trans")
 
 func _on_Sxangxu_lingvon_pressed():
 	get_tree().change_scene("res://Lingvo.tscn")

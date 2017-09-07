@@ -9,7 +9,7 @@
 
 script/source = "extends Node2D
 
-const tempo = 20"
+const tempo = 28"
 
 [node name="Nivelo" type="Node2D"]
 
@@ -70,5 +70,9 @@ transform/pos = Vector2( 270, -1660 )
 [node name="Nitrogeno1" parent="Elementoj" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 390, -520 )
+
+[node name="Nitrogeno2" parent="Elementoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2530, -1700 )
 
 

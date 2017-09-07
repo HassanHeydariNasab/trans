@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://K.gd" type="Script" id=1]
 [ext_resource path="res://K.png" type="Texture" id=2]
 [ext_resource path="res://Elementoj/fumo.png" type="Texture" id=3]
+[ext_resource path="res://Sonoj/340833__barraacka__kitchenequipment-blenderloop-mono-16bit.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Sonoj/197355__eric1223__power-core-2.ogg" type="AudioStream" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -74,6 +76,28 @@ playback/process_mode = 1
 playback/active = false
 playback/repeat = true
 playback/speed = 1.0
+
+[node name="Nitrogensono" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 4 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 4.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Fortsono" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 5 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 10.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 [connection signal="timeout" from="Tempilo_forto" to="." method="_on_Tempilo_forto_timeout"]
 

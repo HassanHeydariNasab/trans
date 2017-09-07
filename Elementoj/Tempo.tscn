@@ -16,7 +16,7 @@ script/script = ExtResource( 1 )
 
 texture = ExtResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Areo" type="Area2D" parent="."]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -29,7 +29,7 @@ angular_damp = 1.0
 collision/layers = 2048
 collision/mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areo"]
 
 transform/pos = Vector2( 0, 10 )
 shape = SubResource( 1 )
@@ -43,7 +43,7 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
+[connection signal="body_enter" from="Areo" to="." method="_on_Areo_body_enter"]
 
 [connection signal="tween_complete" from="Kasxi" to="." method="_on_Kasxi_tween_complete"]
 

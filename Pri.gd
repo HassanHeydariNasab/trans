@@ -9,3 +9,6 @@ func _notification(what):
 
 func _on_Bone_pressed():
 	get_tree().change_scene("res://Niveloj.tscn")
+	
+func _on_Kodo_pressed():
+	OS.shell_open("https://github.com/HassanHeydariNasab/trans")
