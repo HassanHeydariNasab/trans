@@ -1,7 +1,8 @@
 # Sonoj
 
 Koliziado: https://freesound.org/people/cinningbao/sounds/365623/
-Nitrogeno: https://freesound.org/people/barraacka/sounds/340833/
+Nitrogeno: https://freesound.org/people/Mafon2/sounds/371878/
+Nitrogeno uzigxado: https://freesound.org/people/barraacka/sounds/340833/
 Forto: https://freesound.org/people/Eric1223/sounds/197355/
 Tempo: http://freesound.org/people/j1987/sounds/111331/ kaj http://freesound.org/people/andychristen/sounds/268185/
 Fintempo: http://freesound.org/people/jmevangelist/sounds/202500/ kaj https://freesound.org/people/joedeshon/sounds/78562/

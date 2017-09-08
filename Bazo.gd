@@ -10,6 +10,7 @@ onready var Montrilo = get_node("Kanvaso/Montrilo/Montrilo")
 onready var Rekordo = get_node("Kanvaso/Rekordo")
 onready var Finejo = null
 onready var Tempo_sono = get_node("Tempo_sono")
+onready var Nitrogeno_sono = get_node("Nitrogeno_sono")
 onready var Tempilo_Sono = get_node("Tempilo/Sono")
 
 
