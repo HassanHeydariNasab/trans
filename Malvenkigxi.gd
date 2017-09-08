@@ -1,7 +1,8 @@
 extends Node2D
 
 func _ready():
-	pass
+	if Tutmonda.malvenkigxi_kialo == "fintempo":
+		get_node("Fintempo").play()
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:

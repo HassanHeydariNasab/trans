@@ -6,8 +6,12 @@ onready var Tempilo = get_node("Tempilo")
 onready var Tempo = get_node("Kanvaso/Tempo")
 onready var Nitrogenoj = get_node("Kanvaso/Nitrogenoj")
 onready var Montrilo = get_node("Kanvaso/Montrilo/Montrilo")
-onready var FPS = get_node("Kanvaso/FPS")
+#onready var FPS = get_node("Kanvaso/FPS")
+onready var Rekordo = get_node("Kanvaso/Rekordo")
 onready var Finejo = null
+onready var Tempo_sono = get_node("Tempo_sono")
+onready var Tempilo_Sono = get_node("Tempilo/Sono")
+
 
 var agordejo = "user://agordejo.cfg"
 onready var Agordejo = ConfigFile.new()
@@ -20,7 +24,6 @@ var L = Vector2()
 func _ready():
 	get_tree().set_auto_accept_quit(false)
 	Agordejo.load(agordejo)
-	tempo = int(Tempilo.get_time_left())
 	K.set_global_pos(Vector2(450,500))
 	K.set_global_rot(deg2rad(90))
 	add_child(load("res://Niveloj/Nivelo%d.tscn" % Tutmonda.nivelo).instance())
@@ -29,6 +32,13 @@ func _ready():
 	Tempilo.start()
 	move_child(Nivelo,0)
 	Finejo = Nivelo.get_node("Finejo")
+	var rekordo = Agordejo.get_value("Niveloj", str(Tutmonda.nivelo))
+	if rekordo != null:
+		minuto = "%02d" % (rekordo/60)
+		sekundo = "%02d" % (rekordo%60)
+		Rekordo.set_text(str(minuto)+":"+str(sekundo))
+		Rekordo.show()
+	Rekordo
 	set_process(true)
 
 func _notification(what):
@@ -36,8 +46,13 @@ func _notification(what):
 		get_tree().change_scene("res://Niveloj.tscn")
 
 func _process(delta):
-	FPS.set_text(str(int(1.0/delta)))
+#	FPS.set_text(str(int(1.0/delta)))
 	tempo = int(Tempilo.get_time_left())
+	if tempo < 10:
+		if not Tempilo_Sono.is_playing():
+			Tempilo_Sono.play()
+	else:
+		Tempilo_Sono.stop()
 	minuto = "%02d" % (tempo/60)
 	sekundo = "%02d" % (tempo%60)
 	Tempo.set_text(str(minuto)+":"+str(sekundo))
@@ -47,4 +62,9 @@ func _process(delta):
 	Montrilo.set_rot(atan2(L.x,L.y))
 
 func _on_Tempo_timeout():
+	Tutmonda.malvenkigxi_kialo = "fintempo"
 	get_tree().change_scene("res://Malvenkigxi.tscn")
+
+
+func _on_Rekomencu_pressed():
+	get_tree().reload_current_scene()

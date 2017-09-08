@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Elementoj/Finejo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tegolaroj/Blokiloj.tres" type="TileSet" id=2]
 [ext_resource path="res://Elementoj/Tempo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Elementoj/Nitrogeno.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Elementoj/Forto.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Muzikoj/Komiku_-_02_-_Level_1__Jump_and_shoot_stuff_101.ogg" type="AudioStream" id=6]
 
 [sub_resource type="GDScript" id=1]
 
@@ -64,6 +65,8 @@ __meta__ = {
 
 [node name="Elementoj" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="Tempo" parent="Elementoj" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 430, -570 )
@@ -83,5 +86,16 @@ transform/pos = Vector2( 280, -1940 )
 [node name="Forto1" parent="Elementoj" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 660, -1930 )
+
+[node name="Fonmuziko" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 6 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 

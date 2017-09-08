@@ -23,6 +23,8 @@ func _ready():
 func _on_Areo_body_enter( korpo ):
 	if korpo.get_name() == "K":
 		Areo.clear_shapes()
+		if not Bazo.Tempilo_Sono.is_playing():
+			Bazo.Tempo_sono.play()
 		Bazo.Tempilo.set_wait_time(Bazo.Tempilo.get_time_left()+TIPO*5)
 		Bazo.Tempilo.start()
 		Kasxi.start()

@@ -26,6 +26,7 @@ func _ready():
 	for Nivelo in Niveloj__:
 		N = Nivelo.get_name().substr(1,3)
 		if Tutmonda.rekordita and int(N) == Tutmonda.nivelo:
+			Tutmonda.rekordita = false
 			var Novrekordo = get_node("Novrekordo")
 			var Novrekordo_Aperi = Novrekordo.get_node("Aperi")
 			Novrekordo.set_global_pos(Nivelo.get_global_pos()+Vector2(487,60))
@@ -48,11 +49,9 @@ func _ready():
 	)
 
 func _on_Sxangxu_lingvon_pressed():
-	Tutmonda.rekordita = false
 	get_tree().change_scene("res://Lingvo.tscn")
 
 func _on_Pri_pressed():
-	Tutmonda.rekordita = false
 	get_tree().change_scene("res://Pri.tscn")
 
 func _on_Nivelo_pressed(Nivelo):

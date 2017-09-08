@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Elementoj/Finejo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tegolaroj/Blokiloj.tres" type="TileSet" id=2]
 [ext_resource path="res://Elementoj/Tempo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Elementoj/Nitrogeno.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Muzikoj/Komiku_-_10_-_Level_3__Run_on_the_expressway.ogg" type="AudioStream" id=5]
 
 [sub_resource type="GDScript" id=1]
 
@@ -63,6 +64,8 @@ __meta__ = {
 
 [node name="Elementoj" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="Tempo" parent="Elementoj" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 270, -1660 )
@@ -74,5 +77,16 @@ transform/pos = Vector2( 390, -520 )
 [node name="Nitrogeno2" parent="Elementoj" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 2530, -1700 )
+
+[node name="Fonmuziko" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 5 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 

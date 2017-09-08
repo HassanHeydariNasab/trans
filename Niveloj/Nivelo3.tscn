@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Elementoj/Finejo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tegolaroj/Blokiloj.tres" type="TileSet" id=2]
 [ext_resource path="res://Elementoj/Tempo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Elementoj/Nitrogeno.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Elementoj/Forto.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Muzikoj/Kevin_MacLeod_-_04_-_Presenterator.ogg" type="AudioStream" id=6]
 
 [sub_resource type="GDScript" id=1]
 
@@ -58,6 +59,8 @@ tile_data = IntArray( -1441797, 0, -1441796, 0, -1441795, 0, -1441794, 0, -14417
 
 [node name="Elementoj" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="Tempo" parent="Elementoj" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( -60, -1340 )
@@ -93,5 +96,16 @@ transform/pos = Vector2( -190, -2470 )
 [node name="Forto1" parent="Elementoj" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 330, -1540 )
+
+[node name="Fonmuziko" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 6 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 
