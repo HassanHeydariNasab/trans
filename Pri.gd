@@ -12,3 +12,6 @@ func _on_Bone_pressed():
 	
 func _on_Kodo_pressed():
 	OS.shell_open("https://github.com/HassanHeydariNasab/trans")
+
+func _on_Atribuoj_pressed():
+	OS.shell_open("https://github.com/HassanHeydariNasab/trans/blob/master/ATRIBUOJ.md")

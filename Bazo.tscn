@@ -81,7 +81,6 @@ stream/buffering_ms = 500
 
 [node name="Kanvaso" type="CanvasLayer" parent="."]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -264,7 +263,6 @@ invert/border = 100.0
 
 [node name="FPS" type="Label" parent="Kanvaso"]
 
-visibility/visible = false
 rect/scale = Vector2( 0.3, 0.3 )
 focus/ignore_mouse = true
 focus/stop_mouse = true

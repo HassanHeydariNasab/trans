@@ -6,7 +6,7 @@ onready var Tempilo = get_node("Tempilo")
 onready var Tempo = get_node("Kanvaso/Tempo")
 onready var Nitrogenoj = get_node("Kanvaso/Nitrogenoj")
 onready var Montrilo = get_node("Kanvaso/Montrilo/Montrilo")
-#onready var FPS = get_node("Kanvaso/FPS")
+onready var FPS = get_node("Kanvaso/FPS")
 onready var Rekordo = get_node("Kanvaso/Rekordo")
 onready var Finejo = null
 onready var Tempo_sono = get_node("Tempo_sono")
@@ -25,7 +25,7 @@ var L = Vector2()
 func _ready():
 	get_tree().set_auto_accept_quit(false)
 	Agordejo.load(agordejo)
-	K.set_global_pos(Vector2(450,500))
+	K.set_global_pos(Vector2(400,500))
 	K.set_global_rot(deg2rad(90))
 	add_child(load("res://Niveloj/Nivelo%d.tscn" % Tutmonda.nivelo).instance())
 	var Nivelo = get_node("Nivelo")
@@ -47,7 +47,7 @@ func _notification(what):
 		get_tree().change_scene("res://Niveloj.tscn")
 
 func _process(delta):
-#	FPS.set_text(str(int(1.0/delta)))
+	FPS.set_text(str(int(1.0/delta)))
 	tempo = int(Tempilo.get_time_left())
 	if tempo < 10:
 		if not Tempilo_Sono.is_playing():

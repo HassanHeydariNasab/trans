@@ -9,7 +9,7 @@ onready var Agordejo = ConfigFile.new()
 const lingvoj = ["eo", "en"]
 
 var sumo = 0
-const bezonitaj_tempoj = [0, 0, 10, 40]
+const bezonitaj_tempoj = [0, 0, 10, 40, 80]
 
 func _init():
 	var Agordejo = ConfigFile.new()
@@ -29,7 +29,7 @@ func _ready():
 			Tutmonda.rekordita = false
 			var Novrekordo = get_node("Novrekordo")
 			var Novrekordo_Aperi = Novrekordo.get_node("Aperi")
-			Novrekordo.set_global_pos(Nivelo.get_global_pos()+Vector2(487,60))
+			Novrekordo.set_global_pos(Nivelo.get_global_pos()+Vector2(660,60))
 			Novrekordo_Aperi.interpolate_property(Novrekordo, "transform/scale",
 			Vector2(5,5), Vector2(0.7,0.7),
 			0.75, Tween.TRANS_QUINT, Tween.EASE_IN

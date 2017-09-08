@@ -1,11 +1,87 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=23 format=1]
 
 [ext_resource path="res://Tegolaroj/B1.png" type="Texture" id=1]
+[ext_resource path="res://Tegolaroj/muro.png" type="Texture" id=2]
+[ext_resource path="res://Tegolaroj/muro_fleksa.png" type="Texture" id=3]
+[ext_resource path="res://Tegolaroj/muro_tria.png" type="Texture" id=4]
+[ext_resource path="res://Tegolaroj/muro_kvara.png" type="Texture" id=5]
+[ext_resource path="res://Tegolaroj/rotaciita.png" type="Texture" id=6]
+[ext_resource path="res://Tegolaroj/okta.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 64.5406
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 63.9519 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 64, -32, 64, 32, 32, 32, -32, -32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -32, 64, -32, -32, 32, 32, 32, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -64, -32, 64, -32, 64, 32, 32, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 32, 32, 32, 64, -32, 64, -32, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -64, -32, 32, 32, -32, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -64, -32, -32, 32, -64, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 32, -32, 64, -32, 64, 32, 32, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 32, 32, 32, 64, -32, 64, -32, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -32, 32, -64, 32, -64, -32, -32, -32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 32, -32, -32, -32, -32, -64, 32, -64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 64, 0, 0, 64, -64, 0, 0, -64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 64, -32, 64, 32, 32, 64, -32, 64, -64, 32, -64, -32, -32, -64, 32, -64 )
 
 [node name="Blokiloj" type="Node2D"]
 
@@ -31,5 +107,178 @@ bounce = 1.0
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
+
+[node name="Muro" type="Sprite" parent="."]
+
+transform/pos = Vector2( 180, 0 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Muro"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Muro/StaticBody2D"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Muro_fleksa" type="Sprite" parent="."]
+
+transform/pos = Vector2( 360, 0 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Muro_fleksa"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 4 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Muro_fleksa/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( 64, -32, -32, -32, -32, 64, 32, 64, 32, 32, 64, 32 )
+shape_range = Vector2( 0, 1 )
+trigger = false
+
+[node name="Muro_tria" type="Sprite" parent="."]
+
+transform/pos = Vector2( 600, 0 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Muro_tria"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 6 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 7 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 8 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/3/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Muro_tria/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( 64, -32, 64, 32, 32, 32, 32, 64, -32, 64, -32, 32, -64, 32, -64, -32 )
+shape_range = Vector2( 0, 3 )
+trigger = false
+
+[node name="Muro_kvara" type="Sprite" parent="."]
+
+transform/pos = Vector2( 840, 0 )
+texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Muro_kvara"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 10 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 11 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 12 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/3/trigger = false
+shapes/4/shape = SubResource( 13 )
+shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/4/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Muro_kvara/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( 64, -32, 64, 32, 32, 32, 32, 64, -32, 64, -32, 32, -64, 32, -64, -32, -32, -32, -32, -64, 32, -64, 32, -32 )
+shape_range = Vector2( 0, 4 )
+trigger = false
+
+[node name="Rotaciita" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, 192 )
+texture = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rotaciita"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 14 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rotaciita/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( 0, -64, -64, 0, 0, 64, 64, 0 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Okta" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, 384 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Okta"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 15 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Okta/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( 32, -64, -32, -64, -64, -32, -64, 32, -32, 64, 32, 64, 64, 32, 64, -32 )
+shape_range = Vector2( 0, 0 )
+trigger = false
 
 

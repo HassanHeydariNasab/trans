@@ -1,7 +1,8 @@
-extends Node2D
+extends Control
 
 func _ready():
 	if Tutmonda.malvenkigxi_kialo == "fintempo":
+		get_node("Kialo/Kialo").set_text(tr("Tempo finigxis!"))
 		get_node("Fintempo").play()
 
 func _notification(what):
