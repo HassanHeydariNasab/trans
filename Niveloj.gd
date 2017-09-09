@@ -9,7 +9,14 @@ onready var Agordejo = ConfigFile.new()
 const lingvoj = ["eo", "en"]
 
 var sumo = 0
-const bezonitaj_tempoj = [0, 0, 10, 40, 80]
+const tempoj = [
+		[0,10,40,80],
+		[]
+	]
+var pakoj = [
+		[tr("Enkonduko"), tr("Turneto"), tr("La Halo"), tr("Estreto")],
+		[tr("Longa Koridoro"), tr("La Urbeto"), tr("Mallonga Vojo"), tr("Konstruajxo")]
+	]
 
 func _init():
 	var Agordejo = ConfigFile.new()
@@ -21,11 +28,12 @@ func _init():
 func _ready():
 	Agordejo.load(agordejo)
 	get_tree().set_auto_accept_quit(true)
+	get_node("Pakoj").set_selected(Tutmonda.pako)
 	var N = 0
 	var Niveloj__ = Niveloj.get_children()
 	for Nivelo in Niveloj__:
-		N = Nivelo.get_name().substr(1,3)
-		if Tutmonda.rekordita and int(N) == Tutmonda.nivelo:
+		N = int(Nivelo.get_name().substr(1,3))
+		if Tutmonda.rekordita and N == Tutmonda.nivelo:
 			Tutmonda.rekordita = false
 			var Novrekordo = get_node("Novrekordo")
 			var Novrekordo_Aperi = Novrekordo.get_node("Aperi")
@@ -37,28 +45,30 @@ func _ready():
 			Novrekordo_Aperi.start()
 			Novrekordo.show()
 			Novrekordo.get_node("Sono").play()
+		Nivelo.set_text(pakoj[Tutmonda.pako][N])
 		Nivelo.get_node("Tempo").set_text(
-			str(Agordejo.get_value("Niveloj", N, 0))+"s"
+			str(Agordejo.get_value("Niveloj", str(N), 0))+"s"
 		)	
 		sumo += Agordejo.get_value("Niveloj",
-		 		N, 0)
+		 		str(N), 0)
 		Nivelo.connect("pressed", self, "_on_Nivelo_pressed", [Nivelo])
 	get_node("Sumo").set_text(str(sumo))
 	Kasxi.interpolate_property(Konservu, "visibility/opacity", 1,0,
 		2, Tween.TRANS_QUINT, Tween.EASE_IN
 	)
 
-func _on_Sxangxu_lingvon_pressed():
+func _on_Lingvo_pressed():
+	print(1)
 	get_tree().change_scene("res://Lingvo.tscn")
 
 func _on_Pri_pressed():
 	get_tree().change_scene("res://Pri.tscn")
 
 func _on_Nivelo_pressed(Nivelo):
-	var nivelo = int(Nivelo.get_name().substr(1,3))
-	var bezonita_tempo = bezonitaj_tempoj[nivelo]
+	var N = int(Nivelo.get_name().substr(1,3))
+	var bezonita_tempo = tempoj[Tutmonda.pako][N]
 	if sumo >= bezonita_tempo:
-		Tutmonda.nivelo = nivelo
+		Tutmonda.nivelo = N
 		Tutmonda.rekordita = false
 		get_tree().change_scene("res://Bazo.tscn")
 	else:
@@ -67,3 +77,7 @@ func _on_Nivelo_pressed(Nivelo):
 
 func _on_Kasxi_tween_complete( object, key ):
 	Kasxi.stop_all()
+
+func _on_Pakoj_button_selected( idx ):
+	Tutmonda.pako = idx
+	get_tree().reload_current_scene()

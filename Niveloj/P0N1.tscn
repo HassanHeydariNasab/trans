@@ -1,0 +1,144 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://Elementoj/Finejo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tegolaroj/Blokiloj.tres" type="TileSet" id=2]
+[ext_resource path="res://Elementoj/Tempo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Elementoj/Nitrogeno.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Muzikoj/Komiku_-_10_-_Level_3__Run_on_the_expressway.ogg" type="AudioStream" id=5]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node2D
+
+const tempo = 11"
+
+[node name="Nivelo" type="Node2D"]
+
+script/script = SubResource( 1 )
+
+[node name="Finejo1" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 3328, -1984 )
+
+[node name="Finejo2" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 4416, 512 )
+transform/rot = -90.0
+
+[node name="Blokilo" type="TileMap" parent="."]
+
+transform/pos = Vector2( -128, 0 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell/size = Vector2( 128, 128 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 0
+occluder/light_mask = 1
+tile_data = IntArray( -851966, 1610612736, -851936, -1610612736, 262146, -1610612736 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Limo" type="TileMap" parent="."]
+
+transform/pos = Vector2( -128, 0 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell/size = Vector2( 128, 128 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1024
+collision/mask = 2
+occluder/light_mask = 1
+tile_data = IntArray( -983040, 2, -983039, -1610612735, -983038, -1610612735, -983037, -1610612735, -983036, -1610612735, -983035, -1610612735, -983034, -1610612735, -983033, -1610612735, -983032, -1610612735, -983031, -1610612735, -983030, -1610612735, -983029, -1610612735, -983028, -1610612735, -983027, -1610612735, -983026, -1610612735, -983025, -1610612735, -983024, -1610612735, -983023, -1610612735, -983022, -1610612735, -983021, -1610612735, -983020, -1610612735, -983019, -1610612735, -983018, -1610612735, -983017, -1610612735, -983016, -1610612735, -983015, -1610612735, -983012, -1610612735, -983011, -1610612735, -983010, -1610612735, -983009, -1610612735, -983008, -1610612735, -983007, -1610612735, -983006, -1610612734, -917504, 1, -917470, 1, -851968, 1, -851934, 1, -786432, 1, -786398, 1, -720896, 1, -720862, 1, -655360, 1, -655355, 2, -655354, -1610612735, -655353, -1610612735, -655352, -1610612735, -655351, -1610612735, -655350, -1610612735, -655349, -1610612735, -655348, -1610612735, -655347, -1610612735, -655339, -1610612735, -655338, -1610612735, -655337, -1610612735, -655336, -1610612735, -655335, -1610612735, -655334, -1610612735, -655333, -1610612735, -655332, -1610612735, -655331, -1610612734, -655326, 1, -589824, 1, -589819, 1, -589795, 1, -589790, 1, -524288, 1, -524283, 1, -524259, 1, -524254, 1, -458752, 1, -458747, 1, -458723, 1, -458718, 1, -393216, 1, -393211, 1, -393187, 1, -393182, 1, -327680, 1, -327675, 1, -327646, 1, -262144, 1, -262139, 1, -262110, 1, -196608, 1, -196603, 1, -196579, 1, -196574, 1, -131072, 1, -131067, 1, -131043, 1, -131038, 1, -65536, 1, -65531, 1, -65507, 1, -65502, 1, 0, 1, 5, 1, 29, 1, 34, 1, 65536, 1, 65541, -1073741822, 65542, -1610612735, 65543, -1610612735, 65544, -1610612735, 65545, -1610612735, 65546, -1610612735, 65547, -1610612735, 65548, -1610612735, 65549, -1610612735, 65557, -1610612735, 65558, -1610612735, 65559, -1610612735, 65560, -1610612735, 65561, -1610612735, 65562, -1610612735, 65563, -1610612735, 65564, -1610612735, 65565, 1610612738, 65570, 1, 131072, 1, 131106, 1, 196608, 1, 262144, 1, 327680, 1, 327714, 1, 393216, -1073741822, 393217, -1610612735, 393218, -1610612735, 393219, -1610612735, 393220, -1610612735, 393221, -1610612735, 393222, -1610612735, 393223, -1610612735, 393224, -1610612735, 393225, -1610612735, 393226, -1610612735, 393227, -1610612735, 393228, -1610612735, 393229, -1610612735, 393230, -1610612735, 393231, -1610612735, 393232, -1610612735, 393233, -1610612735, 393234, -1610612735, 393235, -1610612735, 393236, -1610612735, 393237, -1610612735, 393238, -1610612735, 393239, -1610612735, 393240, -1610612735, 393241, -1610612735, 393242, -1610612735, 393243, -1610612735, 393244, -1610612735, 393245, -1610612735, 393246, -1610612735, 393247, -1610612735, 393248, -1610612735, 393249, -1610612735, 393250, 1610612738 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Elementoj" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( -128, 0 )
+
+[node name="Tempo" parent="Elementoj" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 200, -1740 )
+
+[node name="Tempo1" parent="Elementoj" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 3968, -832 )
+
+[node name="Tempo2" parent="Elementoj" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 4288, -1728 )
+
+[node name="Tempo3" parent="Elementoj" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 2240, -1536 )
+
+[node name="Tempo4" parent="Elementoj" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1152, -512 )
+
+[node name="Nitrogeno1" parent="Elementoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 512, -512 )
+
+[node name="Nitrogeno3" parent="Elementoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 192, 704 )
+
+[node name="Nitrogeno6" parent="Elementoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 3264, 384 )
+
+[node name="Nitrogeno4" parent="Elementoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2008, 672 )
+
+[node name="Nitrogeno7 2" parent="Elementoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 3200, -1344 )
+
+[node name="Nitrogeno5" parent="Elementoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2520, 672 )
+
+[node name="Nitrogeno7 3" parent="Elementoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 3456, -1024 )
+
+[node name="Nitrogeno2" parent="Elementoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2264, 672 )
+
+[node name="Nitrogeno7" parent="Elementoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 3200, -1024 )
+
+[node name="Fonmuziko" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 5 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+

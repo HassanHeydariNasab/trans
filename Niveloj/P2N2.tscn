@@ -17,9 +17,9 @@ const tempo = 12"
 
 script/script = SubResource( 1 )
 
-[node name="Finejo" parent="." instance=ExtResource( 1 )]
+[node name="Finejo1" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 270, -2880 )
+transform/pos = Vector2( 258, -3004 )
 
 [node name="Blokilo" type="TileMap" parent="."]
 
