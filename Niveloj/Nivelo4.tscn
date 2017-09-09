@@ -79,7 +79,7 @@ transform/pos = Vector2( 416, -2784 )
 
 [node name="Nitrogeno1" parent="Elementoj" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 352, -4736 )
+transform/pos = Vector2( 352, -4992 )
 
 [node name="Nitrogeno2" parent="Elementoj" instance=ExtResource( 4 )]
 
@@ -95,7 +95,7 @@ transform/pos = Vector2( 384, 2624 )
 
 [node name="Forto1" parent="Elementoj" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 416, -5408 )
+transform/pos = Vector2( 416, -5664 )
 
 [node name="Fonmuziko" type="StreamPlayer" parent="."]
 

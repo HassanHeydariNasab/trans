@@ -103,7 +103,7 @@ margin/bottom = 1160.0
 [node name="Rapidi" type="TouchScreenButton" parent="Kanvaso/Kontroliloj"]
 
 visibility/opacity = 0.4
-transform/pos = Vector2( 295, 970 )
+transform/pos = Vector2( 295, 958 )
 transform/scale = Vector2( 0.804688, 0.804688 )
 normal = ExtResource( 4 )
 pressed = ExtResource( 5 )
@@ -331,7 +331,7 @@ config/process_mode = 1
 config/explosiveness = 0.9
 params/direction = 0.0
 params/spread = 20.0
-params/linear_velocity = 300.0
+params/linear_velocity = 400.0
 params/spin_velocity = 0.0
 params/orbit_velocity = 0.0
 params/gravity_direction = 0.0
@@ -345,10 +345,12 @@ params/final_size = 12.0
 params/hue_variation = 0.0
 params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
-randomness/direction = 0.26
-randomness/spread = 0.2
-randomness/initial_size = 0.23
-randomness/final_size = 0.48
+randomness/direction = 0.3
+randomness/spread = 0.3
+randomness/linear_velocity = 0.25
+randomness/initial_size = 0.3
+randomness/final_size = 0.5
+randomness/hue_variation = 0.02
 color/color = Color( 1, 0.768627, 0, 1 )
 
 [node name="Sono" type="StreamPlayer" parent="Sparko"]

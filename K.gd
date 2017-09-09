@@ -36,9 +36,9 @@ func _process(delta):
 		Fumo.set("color/color","FFFFFFFF")
 		Nitrogensono.stop()
 	if Input.is_action_pressed("turni_dekstre"):
-		rotate(deg2rad(-4))
+		rotate(deg2rad(-3))
 	elif Input.is_action_pressed("turni_maldekstre"):
-		rotate(deg2rad(4))
+		rotate(deg2rad(3))
 	if is_colliding():
 		Sparko.set_global_pos(get_collision_pos())
 		Sparko.set_rot(get_rot())
