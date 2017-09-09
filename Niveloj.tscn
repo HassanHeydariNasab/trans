@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Niveloj.gd" type="Script" id=1]
 [ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://Tiparoj/purisa.fnt" type="BitmapFont" id=3]
 [ext_resource path="res://Elementoj/nova_rekordo_EO.tex" type="Texture" id=4]
 [ext_resource path="res://Sonoj/178886__martian__red-whoosh-gladiator-04.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Muzikoj/Unheard_Music_Concepts_-_13_-_Angled_Insight.ogg" type="AudioStream" id=6]
 
 [node name="Niveloj" type="Control"]
 
@@ -113,6 +114,7 @@ max_lines_visible = -1
 
 [node name="Konservu" type="Polygon2D" parent="."]
 
+editor/display_folded = true
 visibility/opacity = 0.0
 transform/pos = Vector2( -30, -510 )
 polygon = Vector2Array( 830, 510, 30, 510, 30, 630, 830, 630 )
@@ -199,7 +201,7 @@ custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 0
-text = "+123"
+text = "123s"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -256,7 +258,7 @@ custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 0
-text = "+123"
+text = "123s"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -313,7 +315,7 @@ custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 0
-text = "+123"
+text = "123s"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -370,7 +372,7 @@ custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 0
-text = "+123"
+text = "123s"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -396,6 +398,7 @@ invert/border = 100.0
 
 [node name="Novrekordo" type="Sprite" parent="."]
 
+editor/display_folded = true
 visibility/visible = false
 transform/pos = Vector2( 480, 480 )
 texture = ExtResource( 4 )
@@ -414,6 +417,17 @@ stream/play = false
 stream/loop = false
 stream/volume_db = 5.0
 stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Fonmuziko" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 6 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 14.0
+stream/autoplay = true
 stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
