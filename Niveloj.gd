@@ -11,12 +11,12 @@ const lingvoj = ["eo", "en"]
 var sumo = 0
 const tempoj = [
 		[0,10,40,80],
-		[]
+		[0,10,40,80],
+		[0,10,40,80],
+		[0,10,40,80]
 	]
-var pakoj = [
-		[tr("Enkonduko"), tr("Turneto"), tr("La Halo"), tr("Estreto")],
-		[tr("Longa Koridoro"), tr("La Urbeto"), tr("Mallonga Vojo"), tr("Konstruajxo")]
-	]
+
+var pakoj = []
 
 func _init():
 	var Agordejo = ConfigFile.new()
@@ -27,6 +27,12 @@ func _init():
 
 func _ready():
 	Agordejo.load(agordejo)
+	pakoj = [
+			[tr("Enkonduko"), tr("Turneto"), tr("Labirinto"), tr("Estreto")],
+			[],
+			[],
+			[tr("Longa Koridoro"), tr("La Urbeto"), tr("Mallonga Vojo"), tr("Konstruajxo")]
+		]
 	get_tree().set_auto_accept_quit(true)
 	get_node("Pakoj").set_selected(Tutmonda.pako)
 	var N = 0
@@ -48,7 +54,7 @@ func _ready():
 		Nivelo.set_text(pakoj[Tutmonda.pako][N])
 		Nivelo.get_node("Tempo").set_text(
 			str(Agordejo.get_value("Niveloj", str(N), 0))+"s"
-		)	
+		)
 		sumo += Agordejo.get_value("Niveloj",
 		 		str(N), 0)
 		Nivelo.connect("pressed", self, "_on_Nivelo_pressed", [Nivelo])
@@ -58,7 +64,6 @@ func _ready():
 	)
 
 func _on_Lingvo_pressed():
-	print(1)
 	get_tree().change_scene("res://Lingvo.tscn")
 
 func _on_Pri_pressed():

@@ -1,12 +1,11 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://Elementoj/Finejo.gd" type="Script" id=1]
-[ext_resource path="res://Elementoj/banto.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 128, 128 )
+extents = Vector2( 416, 128 )
 
 [node name="Finejo" type="Area2D"]
 
@@ -28,10 +27,20 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Aspekto" type="Sprite" parent="."]
+[node name="Aspekto" type="Polygon2D" parent="."]
 
-transform/scale = Vector2( 2, 2 )
-texture = ExtResource( 2 )
+transform/pos = Vector2( 0, 400 )
+polygon = Vector2Array( 0, -128, -64, -32, -16, -32, -16, 80, 16, 80, 16, -32, 64, -32 )
+uv = Vector2Array(  )
+color = Color( 0.117647, 0.533333, 0.898039, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
 
 [connection signal="body_enter" from="." to="." method="_on_Finejo_body_enter"]
 

@@ -377,22 +377,23 @@ flat = false
 button/count = 4
 button/min_button_size = 283.0
 button/align = 0
-button/0/text = "Domo"
+button/0/text = "Urbeto"
 button/0/tooltip = ""
 button/0/icon = null
-button/1/text = "Urbeto"
+button/1/text = "Fabriko"
 button/1/tooltip = ""
 button/1/icon = null
-button/2/text = "Kastelo"
+button/2/text = "Urbo"
 button/2/tooltip = ""
 button/2/icon = null
-button/3/text = "Urbo"
+button/3/text = "Kastelo"
 button/3/tooltip = ""
 button/3/icon = null
 button/selected = 0
 
 [node name="Konservu" type="Polygon2D" parent="."]
 
+editor/display_folded = true
 visibility/opacity = 0.0
 transform/pos = Vector2( -30, -510 )
 polygon = Vector2Array( 830, 510, 30, 510, 30, 630, 830, 630 )

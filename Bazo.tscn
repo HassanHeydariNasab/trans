@@ -40,14 +40,14 @@ script/script = ExtResource( 1 )
 [node name="K" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 410, 570 )
-transform/scale = Vector2( 2, 2 )
+transform/scale = Vector2( 2.5, 2.5 )
 
 [node name="Kamero" type="Camera2D" parent="."]
 
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 2.5, 2.5 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000

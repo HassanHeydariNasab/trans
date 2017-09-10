@@ -10,7 +10,7 @@ onready var Sparko = get_node("/root/Bazo/Sparko")
 onready var Sparko_Sono = get_node("/root/Bazo/Sparko/Sono")
 
 const RAPIDO = 4
-const RAPIDEGO = 5
+const RAPIDEGO = 7
 var nitrogenoj = 0
 
 func _ready():

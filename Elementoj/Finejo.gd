@@ -9,6 +9,7 @@ func _ready():
 	pass
 
 func _on_Finejo_body_enter( korpo ):
+	print(korpo.get_name())
 	if korpo.get_name() == "K":
 		Agordejo.load(agordejo)
 		if Agordejo.get_value("Niveloj", str(Tutmonda.nivelo), 0) < int(Bazo.Tempilo.get_time_left()):
