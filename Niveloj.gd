@@ -11,9 +11,9 @@ const lingvoj = ["eo", "en"]
 var sumo = 0
 const tempoj = [
 		[0,0,0,0],
-		[0,10,40,80],
-		[0,10,40,80],
-		[0,10,40,80]
+		[0,0,0,0],
+		[0,0,0,0],
+		[0,0,0,0]
 	]
 
 var pakoj = []
@@ -35,10 +35,9 @@ func _ready():
 		]
 	get_tree().set_auto_accept_quit(true)
 	get_node("Pakoj").set_selected(Tutmonda.pako)
-	var N = 0
-	var Niveloj__ = Niveloj.get_children()
-	for Nivelo in Niveloj__:
-		N = int(Nivelo.get_name().substr(1,3))
+	var Nivelo = null
+	for N in range(4):
+		Nivelo = Niveloj.get_node("N"+str(N))
 		if Tutmonda.rekordita and N == Tutmonda.nivelo:
 			Tutmonda.rekordita = false
 			var Novrekordo = get_node("Novrekordo")
@@ -52,11 +51,12 @@ func _ready():
 			Novrekordo.show()
 			Novrekordo.get_node("Sono").play()
 		Nivelo.set_text(pakoj[Tutmonda.pako][N])
-		Nivelo.get_node("Tempo").set_text(
-			str(Agordejo.get_value("Niveloj", str(N), 0))+"s"
-		)
-		sumo += Agordejo.get_value("Niveloj",
-		 		str(N), 0)
+		if N != 3:
+			Nivelo.get_node("Tempo").set_text(
+				str(Agordejo.get_value("Niveloj", "P"+str(Tutmonda.pako)+"N"+str(N), 0))+"s"
+			)
+			sumo += Agordejo.get_value("Niveloj",
+			 		"P"+str(Tutmonda.pako)+"N"+str(N), 0)
 		Nivelo.connect("pressed", self, "_on_Nivelo_pressed", [Nivelo])
 	get_node("Sumo").set_text(str(sumo))
 	Kasxi.interpolate_property(Konservu, "visibility/opacity", 1,0,
@@ -75,7 +75,10 @@ func _on_Nivelo_pressed(Nivelo):
 	if sumo >= bezonita_tempo:
 		Tutmonda.nivelo = N
 		Tutmonda.rekordita = false
-		get_tree().change_scene("res://Bazo.tscn")
+		if N == 3:
+			get_tree().change_scene("res://Vendejo.tscn")
+		else:
+			get_tree().change_scene("res://Bazo.tscn")
 	else:
 		Konservu.get_node("Mesagxo").set_text(tr("Pliu vian konservitan tempon al")+" "+str(bezonita_tempo)+"s")
 		Kasxi.resume_all()

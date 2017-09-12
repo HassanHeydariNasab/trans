@@ -115,7 +115,6 @@ max_lines_visible = -1
 
 [node name="Niveloj" type="Control" parent="."]
 
-editor/display_folded = true
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = false
@@ -303,7 +302,6 @@ invert/border = 100.0
 
 [node name="N3" type="Button" parent="Niveloj"]
 
-editor/display_folded = true
 rect/min_size = Vector2( 400, 150 )
 rect/scale = Vector2( 0.7, 0.7 )
 focus/ignore_mouse = false
@@ -320,44 +318,6 @@ enabled_focus_mode = 2
 shortcut = null
 text = "N3"
 flat = false
-
-[node name="Tempo" type="Label" parent="Niveloj/N3"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 629.0
-margin/top = 29.0
-margin/right = 829.0
-margin/bottom = 143.0
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 0
-custom_constants/shadow_offset_y = 0
-text = "123s"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Aspekto" type="Polygon2D" parent="Niveloj/N3/Tempo"]
-
-visibility/behind_parent = true
-transform/pos = Vector2( -395.429, -214 )
-transform/scale = Vector2( 1.42857, 1.42857 )
-polygon = Vector2Array( 276.501, 149.5, 436.501, 149.5, 416.501, 229.5, 276.501, 229.5 )
-uv = Vector2Array(  )
-color = Color( 0.611765, 0.8, 0.396078, 1 )
-vertex_colors = ColorArray(  )
-offset = Vector2( 0, 0 )
-texture/texture = null
-texture/offset = Vector2( 0, 0 )
-texture/scale = Vector2( 1, 1 )
-texture/rotation = 0.0
-invert/enable = false
-invert/border = 100.0
 
 [node name="Pakoj" type="HButtonArray" parent="."]
 
