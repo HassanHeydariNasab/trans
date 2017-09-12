@@ -9,8 +9,8 @@ onready var Fortsono = get_node("Fortsono")
 onready var Sparko = get_node("/root/Bazo/Sparko")
 onready var Sparko_Sono = get_node("/root/Bazo/Sparko/Sono")
 
-const RAPIDO = 4
-const RAPIDEGO = 7
+const RAPIDO = 8
+const RAPIDEGO = 14
 var nitrogenoj = 0
 
 func _ready():
@@ -23,8 +23,9 @@ func _ready():
 	0.5, Tween.TRANS_QUART, Tween.TRANS_LINEAR
 	)
 	set_process(true)
+	set_fixed_process(true)
 
-func _process(delta):
+func _fixed_process(delta):
 	move(Vector2(RAPIDO*cos(get_rot()), -RAPIDO*sin(get_rot())))
 	if Input.is_action_pressed("rapidi") and nitrogenoj > 0:
 		nitrogenoj -= 1
@@ -39,6 +40,8 @@ func _process(delta):
 		rotate(deg2rad(-3))
 	elif Input.is_action_pressed("turni_maldekstre"):
 		rotate(deg2rad(3))
+
+func _process(delta):
 	if is_colliding():
 		Sparko.set_global_pos(get_collision_pos())
 		Sparko.set_rot(get_rot())

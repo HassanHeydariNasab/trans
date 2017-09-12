@@ -10,7 +10,7 @@ const lingvoj = ["eo", "en"]
 
 var sumo = 0
 const tempoj = [
-		[0,10,40,80],
+		[0,0,0,0],
 		[0,10,40,80],
 		[0,10,40,80],
 		[0,10,40,80]
@@ -28,10 +28,10 @@ func _init():
 func _ready():
 	Agordejo.load(agordejo)
 	pakoj = [
-			[tr("Enkonduko"), tr("Turneto"), tr("Labirinto"), tr("Estreto")],
+			[tr("Enkonduko"), tr("Turneto"), tr("Parko"), tr("Estreto")],
 			[],
 			[],
-			[tr("Longa Koridoro"), tr("La Urbeto"), tr("Mallonga Vojo"), tr("Konstruajxo")]
+			[tr("Longa Koridoro"), tr("Labirinto"), tr("Mallonga Vojo"), tr("Konstruajxo")]
 		]
 	get_tree().set_auto_accept_quit(true)
 	get_node("Pakoj").set_selected(Tutmonda.pako)

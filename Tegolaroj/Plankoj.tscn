@@ -6,6 +6,7 @@
 
 [node name="Tegolo1" type="Sprite" parent="."]
 
+transform/scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 
 

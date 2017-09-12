@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Tegolaroj/arbo1.png" type="Texture" id=1]
+[ext_resource path="res://Tegolaroj/arbo2.png" type="Texture" id=2]
+[ext_resource path="res://Tegolaroj/arbo3.png" type="Texture" id=3]
+
+[node name="Arboj" type="Node2D"]
+
+[node name="Arbo1" type="Sprite" parent="."]
+
+transform/scale = Vector2( 5, 5 )
+z/relative = false
+texture = ExtResource( 1 )
+
+[node name="Arbo2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1600, 0 )
+transform/scale = Vector2( 5, 5 )
+z/z = 1
+z/relative = false
+texture = ExtResource( 2 )
+
+[node name="Arbo3" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, 1152 )
+transform/scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
+
+
