@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Niveloj.gd" type="Script" id=1]
 [ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Elementoj/nova_rekordo_EO.tex" type="Texture" id=4]
 [ext_resource path="res://Sonoj/178886__martian__red-whoosh-gladiator-04.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Muzikoj/Unheard_Music_Concepts_-_13_-_Angled_Insight.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Sonoj/371878__mafon2__trickle-clicker.ogg" type="AudioStream" id=7]
 
 [node name="Niveloj" type="Control"]
 
@@ -115,6 +116,7 @@ max_lines_visible = -1
 
 [node name="Niveloj" type="Control" parent="."]
 
+editor/display_folded = true
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = false
@@ -425,6 +427,17 @@ stream/stream = ExtResource( 6 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 14.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Enveno_sono" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 7 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 8.0
 stream/autoplay = true
 stream/paused = false
 stream/loop_restart_time = 0.0

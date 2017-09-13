@@ -13,6 +13,8 @@ var sekundo = 0
 var minuto = 0
 
 func _ready():
+	Tutmonda.nitrogenoj = 0
+	Tutmonda.bomboj = 0
 	get_tree().set_auto_accept_quit(false)
 	Agordejo.load(agordejo)
 	for N in range(3):
@@ -42,3 +44,6 @@ func _on_Bombo_pressed():
 		Tempo.set_text(str(minuto)+":"+str(sekundo))
 		Tutmonda.bomboj += 1
 		Bombo_Nombroj.set_text(str(Tutmonda.bomboj))
+
+func _on_Komencu_pressed():
+	get_tree().change_scene("res://Estro.tscn")

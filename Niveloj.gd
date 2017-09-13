@@ -31,7 +31,7 @@ func _ready():
 			[tr("Enkonduko"), tr("Turneto"), tr("Parko"), tr("Estreto")],
 			[],
 			[],
-			[tr("Longa Koridoro"), tr("Labirinto"), tr("Mallonga Vojo"), tr("Konstruajxo")]
+			[tr("Longa Koridoro"), tr("La Halo"), tr("Labirinto"), tr("Estrego")]
 		]
 	get_tree().set_auto_accept_quit(true)
 	get_node("Pakoj").set_selected(Tutmonda.pako)

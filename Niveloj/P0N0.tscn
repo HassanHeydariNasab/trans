@@ -62,6 +62,7 @@ transform/pos = Vector2( 260, -4832 )
 
 [node name="Elementoj" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, -1280 )
 
 [node name="Tempo" parent="Elementoj" instance=ExtResource( 3 )]
@@ -104,7 +105,7 @@ collision/bounce = 0.0
 collision/layers = 0
 collision/mask = 0
 occluder/light_mask = 1
-tile_data = IntArray( -2096943, 0, -327676, 0, -65532, -1610612736, 65534, 1610612736, 589829, 2 )
+tile_data = IntArray( -2096943, 0, -327676, 0, -65532, -1610612736, 65534, 1610612736, 196612, 2, 327678, 2, 524286, 2, 458756, 2, 655358, 2 )
 
 [node name="Fonmuziko" type="StreamPlayer" parent="."]
 

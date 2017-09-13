@@ -39,7 +39,7 @@ func _ready():
 	Finejo1 = Nivelo.get_node("Finejo1")
 	if Nivelo.has_node("Finejo2"):
 		Finejo2 = Nivelo.get_node("Finejo2")
-	var rekordo = Agordejo.get_value("Niveloj", str(Tutmonda.nivelo))
+	var rekordo = Agordejo.get_value("Niveloj", "P"+str(Tutmonda.pako)+"N"+str(Tutmonda.nivelo), null)
 	if rekordo != null:
 		minuto = "%02d" % (rekordo/60)
 		sekundo = "%02d" % (rekordo%60)
