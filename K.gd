@@ -12,6 +12,8 @@ onready var Sparko_Sono = get_node("/root/Bazo/Sparko/Sono")
 const RAPIDO = 8
 const RAPIDEGO = 14
 var nitrogenoj = 0
+var vivo = 200
+var bomboj = 0
 
 func _ready():
 	Fortigxi.interpolate_property(Aspekto, "modulate",
@@ -24,6 +26,14 @@ func _ready():
 	)
 	set_process(true)
 	set_fixed_process(true)
+	if Tutmonda.nivelo == 3:
+		set_process_input(true)
+
+func _input(event):
+	if event.is_action_pressed("bombi"):
+		var Bombajxo_ = get_node("/root/Bazo").Bombajxo.instance()
+		get_node("/root/Bazo/Elementoj").add_child(Bombajxo_)
+		Bombajxo_.set_global_pos(get_global_pos())
 
 func _fixed_process(delta):
 	move(Vector2(RAPIDO*cos(get_rot()), -RAPIDO*sin(get_rot())))

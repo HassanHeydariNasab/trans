@@ -1,8 +1,8 @@
 extends Navigation2D
 
-const RAPIDO = 550.0
+const RAPIDO = 1000.0
 
-onready var M = get_node("M1")
+onready var M = get_node("M")
 onready var P = get_node("P")
 var K = null
 
@@ -25,9 +25,6 @@ func _ready():
 	set_fixed_process(true)
 
 func _fixed_process(delta):
-	if K.is_colliding():
-		if K.get_collider().get_name() == "M1":
-			get_parent().vivo -= 1
 	P.set_global_pos(M.get_global_pos())
 	if (path.size() > 1):
 		M.set_rot(P.get_angle_to(K.get_global_pos())+deg2rad(180))
@@ -45,6 +42,7 @@ func _fixed_process(delta):
 
 		var atpos = path[path.size() - 1]
 		M.set_global_pos(atpos)
+#		M.move_to(atpos)
 
 		if (path.size() < 2):
 			path = []
