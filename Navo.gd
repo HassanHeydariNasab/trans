@@ -4,6 +4,7 @@ const RAPIDO = 1000.0
 
 onready var M = get_node("M")
 onready var P = get_node("P")
+onready var Halti = get_node("Halti")
 var K = null
 
 var begin = Vector2()
@@ -13,11 +14,17 @@ var path = []
 var i = 0
 var angulo = 0
 
+var haltita = false
+
 func _update_path():
 	var p = get_simple_path(begin, end, true)
 	path = Array(p) # Vector2array too complex to use, convert to regular array
 	path.invert()
 	set_fixed_process(true)
+
+func haltigi():
+	haltita = true
+	Halti.start()
 
 func _ready():
 	K = get_node("/root/Bazo/K")
@@ -26,7 +33,7 @@ func _ready():
 
 func _fixed_process(delta):
 	P.set_global_pos(M.get_global_pos())
-	if (path.size() > 1):
+	if (path.size() > 1 and not haltita):
 		M.set_rot(P.get_angle_to(K.get_global_pos())+deg2rad(180))
 		var to_walk = delta*RAPIDO
 		while(to_walk > 0 and path.size() >= 2):
@@ -56,3 +63,6 @@ func _process(delta):
 		begin = M.get_global_pos()
 		end = K.get_global_pos()
 		_update_path()
+
+func _on_Halti_timeout():
+	haltita = false

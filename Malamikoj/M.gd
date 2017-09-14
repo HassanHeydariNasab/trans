@@ -3,7 +3,8 @@ extends KinematicBody2D
 var K = null
 
 var je_Areo = false
-var vivo = 2
+const komenca_vivo = 12.0
+var vivo = 12.0
 
 func _ready():
 	K = get_node("/root/Bazo/K")

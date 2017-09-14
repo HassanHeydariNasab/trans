@@ -132,6 +132,20 @@ polygon = Vector2Array( 19, -47, 80, -19, 26, -40, 45, 37, -1, 45, -32, 32, -28,
 shape_range = Vector2( 0, 2 )
 trigger = false
 
+[node name="Vivo" type="Polygon2D" parent="."]
+
+polygon = Vector2Array( 70, 140, 70, 160, -70, 160, -70, 140 )
+uv = Vector2Array(  )
+color = Color( 1, 0.654902, 0.14902, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
 [connection signal="body_enter" from="Areo" to="." method="_on_Areo_body_enter"]
 
 [connection signal="body_exit" from="Areo" to="." method="_on_Areo_body_exit"]
