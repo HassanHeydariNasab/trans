@@ -14,7 +14,7 @@ func _ready():
 func _on_Areo_body_enter( korpo ):
 	if korpo.get_name() == "K":
 		Areo.clear_shapes()
-		Bazo.Nitrogeno_sono.play()
+		Bazo.Bombo_sono.play()
 		Bazo.K.bomboj += 1
 		if Bazo.K.bomboj > 10:
 			Bazo.K.bomboj = 10

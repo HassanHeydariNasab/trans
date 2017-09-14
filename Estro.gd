@@ -9,6 +9,7 @@ onready var Montrilo = get_node("Kanvaso/Montrilo/Montrilo")
 onready var FPS = get_node("Kanvaso/FPS")
 onready var Finejo = get_node("Finejo")
 onready var Nitrogeno_sono = get_node("Nitrogeno_sono")
+onready var Bombo_sono = get_node("Bombo_sono")
 onready var Bombajxo = preload("res://Elementoj/Bombajxo.tscn")
 
 
@@ -42,7 +43,7 @@ func _process(delta):
 	Kamero.set_offset(K.get_global_pos()+Vector2(0,-100))
 	Nitrogenoj.set_value(K.nitrogenoj)
 	Vivo.set_value(K.vivo)
-	Bomboj.set_value(K.bomboj)
+	Bomboj.set_text(str(K.bomboj))
 	L = Finejo.get_global_pos() - K.get_global_pos()
 	Montrilo.set_rot(atan2(L.x,L.y))
 

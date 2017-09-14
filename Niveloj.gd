@@ -57,6 +57,19 @@ func _ready():
 			)
 			sumo += Agordejo.get_value("Niveloj",
 			 		"P"+str(Tutmonda.pako)+"N"+str(N), 0)
+		else:
+			if Agordejo.get_value("Niveloj", "P"+str(Tutmonda.pako)+"N"+str(N)):
+				var Pasita = get_node("Pasita")
+				var Pasita_Aperi = get_node("Pasita/Aperi")
+				Pasita.show()
+				if Tutmonda.jxus_pasita:
+					Tutmonda.jxus_pasita = false
+					Pasita_Aperi.interpolate_property(Pasita, "transform/scale",
+					Vector2(5,5), Vector2(0.7,0.7),
+					0.75, Tween.TRANS_QUINT, Tween.EASE_IN
+					)
+					Pasita_Aperi.start()
+					get_node("Novrekordo/Sono").play()
 		Nivelo.connect("pressed", self, "_on_Nivelo_pressed", [Nivelo])
 	get_node("Sumo").set_text(str(sumo))
 	Kasxi.interpolate_property(Konservu, "visibility/opacity", 1,0,

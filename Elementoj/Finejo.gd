@@ -11,12 +11,18 @@ func _ready():
 func _on_Finejo_body_enter( korpo ):
 	print(korpo.get_name())
 	if korpo.get_name() == "K":
+		Agordejo.load(agordejo)
 		if Tutmonda.nivelo != 3:
-			Agordejo.load(agordejo)
 			if Agordejo.get_value("Niveloj", "P"+str(Tutmonda.pako)+"N"+str(Tutmonda.nivelo), 0) < int(Bazo.Tempilo.get_time_left()):
 				Agordejo.set_value("Niveloj", "P"+str(Tutmonda.pako)+"N"+str(Tutmonda.nivelo),
 					int(Bazo.Tempilo.get_time_left())
 				)
 				Agordejo.save(agordejo)
 				Tutmonda.rekordita = true
+		else:
+			Tutmonda.jxus_pasita = true
+			Agordejo.set_value("Niveloj", "P"+str(Tutmonda.pako)+"N"+str(Tutmonda.nivelo),
+				true
+			)
+			Agordejo.save(agordejo)
 		get_tree().change_scene("res://Niveloj.tscn")

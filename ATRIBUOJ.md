@@ -10,9 +10,15 @@ Nitrogeno uzigxado: https://freesound.org/people/barraacka/sounds/340833/
 
 Forto: https://freesound.org/people/Eric1223/sounds/197355/
 
+Bombo: http://freesound.org/people/User1994/sounds/132025/
+
 Tempo: http://freesound.org/people/j1987/sounds/111331/ kaj http://freesound.org/people/andychristen/sounds/268185/
 
+Bombeksplodado: https://freesound.org/people/smcameron/sounds/51464/
+
 Fintempo: http://freesound.org/people/jmevangelist/sounds/202500/ kaj https://freesound.org/people/joedeshon/sounds/78562/
+
+Mortigxi: http://freesound.org/people/sicbm/sounds/348448/
 
 Nova Rekordo: https://freesound.org/people/martian/sounds/178886/
 

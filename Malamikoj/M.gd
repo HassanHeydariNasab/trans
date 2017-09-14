@@ -12,6 +12,9 @@ func _ready():
 func _fixed_process(delta):
 	if je_Areo:
 		K.vivo -= 1
+		if K.vivo <= 0:
+			Tutmonda.malvenkigxi_kialo = "mortigxi"
+			get_tree().change_scene("res://Malvenkigxi.tscn")
 
 func _on_Areo_body_enter( korpo ):
 	if korpo == K:
