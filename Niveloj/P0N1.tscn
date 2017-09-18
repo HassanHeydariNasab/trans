@@ -67,8 +67,6 @@ transform/rot = -90.0
 
 [node name="Elementoj" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="Tempo" parent="Elementoj" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( -832, -768 )
@@ -124,7 +122,7 @@ transform/rot = -29.7652
 
 [node name="Papero2" parent="Elementoj" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 384, -768 )
+transform/pos = Vector2( -320, -768 )
 transform/rot = -29.7652
 
 [node name="Fonmuziko" type="StreamPlayer" parent="."]

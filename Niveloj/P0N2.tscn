@@ -75,7 +75,6 @@ transform/rot = -90.0
 
 [node name="Elementoj" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 0, -1280 )
 
 [node name="Tempo" parent="Elementoj" instance=ExtResource( 3 )]
@@ -258,7 +257,7 @@ transform/rot = 117.208
 
 [node name="Papero3" parent="Elementoj" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 512, 1920 )
+transform/pos = Vector2( 2688, -384 )
 transform/rot = 110.042
 
 [node name="Papero1" parent="Elementoj" instance=ExtResource( 5 )]
