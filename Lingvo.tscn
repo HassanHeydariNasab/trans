@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Lingvo.gd" type="Script" id=1]
 [ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=2]
-[ext_resource path="res://Sonoj/371878__mafon2__trickle-clicker.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Tiparoj/jomhuria.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://Sonoj/371878__mafon2__trickle-clicker.ogg" type="AudioStream" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -33,7 +34,7 @@ flat = false
 transform/pos = Vector2( 299.213, 131.545 )
 polygon = Vector2Array( 39.6666, -13.6667, -80.3334, -0.333374, -80.3334, 79.6666, 106.333, 106.333, 199.667, 79.6666, 222.333, 12.9999, 119.667, -13.6667 )
 uv = Vector2Array(  )
-color = Color( 0.917647, 0.917647, 0.917647, 1 )
+color = Color( 0.913725, 0.913725, 0.913725, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
 texture/texture = null
@@ -54,7 +55,7 @@ margin/left = -20.0
 margin/top = 17.0
 margin/right = 267.0
 margin/bottom = 94.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Esperanto"
 percent_visible = 1.0
@@ -86,7 +87,7 @@ flat = false
 transform/pos = Vector2( 299.213, 131.545 )
 polygon = Vector2Array( 39.6666, -13.6667, -80.3334, -0.333374, -80.3334, 79.6666, 106.333, 106.333, 199.667, 79.6666, 222.333, 12.9999, 119.667, -13.6667 )
 uv = Vector2Array(  )
-color = Color( 0.917647, 0.917647, 0.917647, 1 )
+color = Color( 0.913725, 0.913725, 0.913725, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
 texture/texture = null
@@ -107,7 +108,7 @@ margin/left = -2.0
 margin/top = 17.0
 margin/right = 285.0
 margin/bottom = 94.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "English"
 percent_visible = 1.0
@@ -116,7 +117,7 @@ max_lines_visible = -1
 
 [node name="Enveno_sono" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 3 )
+stream/stream = ExtResource( 4 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 8.0

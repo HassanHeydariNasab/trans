@@ -28,7 +28,7 @@ func _init():
 func _ready():
 	Agordejo.load(agordejo)
 	pakoj = [
-			[tr("Enkonduko"), tr("Turneto"), tr("Parko"), tr("Estreto")],
+			[tr("Enkonduko"), tr("Turneto"), tr("La Parko"), tr("Estreto")],
 			[],
 			[],
 			[tr("Longa Koridoro"), tr("La Halo"), tr("Labirinto"), tr("Estrego")]

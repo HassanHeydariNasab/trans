@@ -289,6 +289,7 @@ transform/scale = Vector2( 2.5, 2.5 )
 
 [node name="Navo" type="Navigation2D" parent="."]
 
+editor/display_folded = true
 script/script = ExtResource( 8 )
 
 [node name="Navajxo" type="NavigationPolygonInstance" parent="Navo"]
@@ -332,6 +333,7 @@ drag_margin/bottom = 0.2
 
 [node name="Kanvaso" type="CanvasLayer" parent="."]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0

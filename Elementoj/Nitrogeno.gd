@@ -15,7 +15,7 @@ func _on_Areo_body_enter( korpo ):
 	if korpo.get_name() == "K":
 		Areo.clear_shapes()
 		Bazo.Nitrogeno_sono.play()
-		Bazo.K.nitrogenoj += 60
+		Bazo.K.nitrogenoj += 40
 		if Bazo.K.nitrogenoj > 200:
 			Bazo.K.nitrogenoj = 200
 		Kasxi.start()

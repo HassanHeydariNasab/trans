@@ -7,6 +7,8 @@ const lingvoj = ["eo", "en"]
 onready var Tempo = get_node("Tempo")
 onready var Nitrogeno_Nombroj = get_node("Nitrogeno/Nombroj")
 onready var Bombo_Nombroj = get_node("Bombo/Nombroj")
+onready var Bombo_Sono = get_node("Bombo/Sono")
+onready var Nitrogeno_Sono = get_node("Nitrogeno/Sono")
 
 var sumo = 0
 var sekundo = 0
@@ -28,22 +30,24 @@ func _notification(what):
 		get_tree().change_scene("res://Niveloj.tscn")
 
 func _on_Nitrogeno_pressed():
-	if sumo >= 10:
+	if sumo >= 10 and Tutmonda.nitrogenoj < 5:
 		sumo -= 10
 		minuto = "%02d" % (sumo/60)
 		sekundo = "%02d" % (sumo%60)
 		Tempo.set_text(str(minuto)+":"+str(sekundo))
 		Tutmonda.nitrogenoj += 1
-		Nitrogeno_Nombroj.set_text(str(Tutmonda.nitrogenoj))
+		Nitrogeno_Nombroj.set_text(str(Tutmonda.nitrogenoj)+"/5")
+		Nitrogeno_Sono.play()
 
 func _on_Bombo_pressed():
-	if sumo >= 5:
+	if sumo >= 5 and Tutmonda.bomboj < 10:
 		sumo -= 5
 		minuto = "%02d" % (sumo/60)
 		sekundo = "%02d" % (sumo%60)
 		Tempo.set_text(str(minuto)+":"+str(sekundo))
 		Tutmonda.bomboj += 1
-		Bombo_Nombroj.set_text(str(Tutmonda.bomboj))
+		Bombo_Nombroj.set_text(str(Tutmonda.bomboj)+"/10")
+		Bombo_Sono.play()
 
 func _on_Komencu_pressed():
 	get_tree().change_scene("res://Estro.tscn")

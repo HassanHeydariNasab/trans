@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Niveloj.gd" type="Script" id=1]
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://Tiparoj/jomhuria.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://Tiparoj/purisa.fnt" type="BitmapFont" id=3]
-[ext_resource path="res://Elementoj/pasita_EO.tex" type="Texture" id=4]
-[ext_resource path="res://Elementoj/nova_rekordo_EO.tex" type="Texture" id=5]
-[ext_resource path="res://Sonoj/178886__martian__red-whoosh-gladiator-04.ogg" type="AudioStream" id=6]
-[ext_resource path="res://Muzikoj/Unheard_Music_Concepts_-_13_-_Angled_Insight.ogg" type="AudioStream" id=7]
-[ext_resource path="res://Sonoj/371878__mafon2__trickle-clicker.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=4]
+[ext_resource path="res://Elementoj/pasita_EO.tex" type="Texture" id=5]
+[ext_resource path="res://Elementoj/nova_rekordo_EO.tex" type="Texture" id=6]
+[ext_resource path="res://Sonoj/178886__martian__red-whoosh-gladiator-04.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Muzikoj/Unheard_Music_Concepts_-_13_-_Angled_Insight.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Sonoj/371878__mafon2__trickle-clicker.ogg" type="AudioStream" id=9]
 
 [node name="Niveloj" type="Control"]
 
@@ -33,9 +34,9 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 380.0
+margin/left = 340.0
 margin/top = -1060.0
-margin/right = -980.0
+margin/right = -998.0
 margin/bottom = -1203.0
 custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
@@ -159,7 +160,7 @@ margin/left = 629.0
 margin/top = 29.0
 margin/right = 829.0
 margin/bottom = 143.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 0
@@ -217,7 +218,7 @@ margin/left = 629.0
 margin/top = 29.0
 margin/right = 829.0
 margin/bottom = 143.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 0
@@ -275,7 +276,7 @@ margin/left = 629.0
 margin/top = 29.0
 margin/right = 829.0
 margin/bottom = 143.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 0
@@ -382,7 +383,7 @@ margin/left = 50.0
 margin/top = 510.0
 margin/right = 1219.0
 margin/bottom = 694.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Pliu vian konservitan tempon al "
 valign = 1
@@ -402,7 +403,7 @@ playback/speed = 1.0
 visibility/visible = false
 transform/pos = Vector2( 460, 740 )
 transform/scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Aperi" type="Tween" parent="Pasita"]
 
@@ -416,7 +417,7 @@ playback/speed = 1.0
 editor/display_folded = true
 visibility/visible = false
 transform/pos = Vector2( 480, 480 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="Aperi" type="Tween" parent="Novrekordo"]
 
@@ -427,7 +428,7 @@ playback/speed = 1.0
 
 [node name="Sono" type="StreamPlayer" parent="Novrekordo"]
 
-stream/stream = ExtResource( 6 )
+stream/stream = ExtResource( 7 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 5.0
@@ -438,7 +439,7 @@ stream/buffering_ms = 500
 
 [node name="Fonmuziko" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 7 )
+stream/stream = ExtResource( 8 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 14.0
@@ -449,7 +450,7 @@ stream/buffering_ms = 500
 
 [node name="Enveno_sono" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 8 )
+stream/stream = ExtResource( 9 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 8.0
