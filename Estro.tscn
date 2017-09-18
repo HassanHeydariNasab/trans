@@ -73,18 +73,20 @@ transform/pos = Vector2( 496, -24928 )
 
 [node name="Etikedo" type="Label" parent="Finejo"]
 
-rect/scale = Vector2( 3, 3 )
+rect/scale = Vector2( 2.5, 2.5 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -560.0
-margin/top = -208.0
-margin/right = -183.0
-margin/bottom = -131.0
+margin/left = -624.0
+margin/top = -256.0
+margin/right = -112.0
+margin/bottom = -179.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Sekura Domo"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
