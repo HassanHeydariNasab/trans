@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Malvenkigxi.gd" type="Script" id=1]
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://Tiparoj/jomhuria.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://Sonoj/78562__joedeshon__alarm-clock-ringing-01.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Sonoj/348448__sicbm__dead-robot-01.ogg" type="AudioStream" id=4]
 
@@ -76,14 +76,15 @@ invert/border = 100.0
 [node name="Kialo" type="Label" parent="Kialo"]
 
 anchor/right = 1
+rect/rotation = -4.26671
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 250.0
-margin/right = 90.0
-margin/bottom = 327.0
+margin/left = 6.0
+margin/top = 215.0
+margin/right = 84.0
+margin/bottom = 299.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Tempo finigxis!"
