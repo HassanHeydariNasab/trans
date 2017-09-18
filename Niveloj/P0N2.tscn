@@ -75,6 +75,7 @@ transform/rot = -90.0
 
 [node name="Elementoj" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, -1280 )
 
 [node name="Tempo" parent="Elementoj" instance=ExtResource( 3 )]
@@ -303,7 +304,6 @@ stream/buffering_ms = 500
 
 [node name="Planko" type="Node2D" parent="."]
 
-editor/display_folded = true
 z/z = -2
 __meta__ = {
 "_edit_lock_": true
@@ -312,7 +312,25 @@ __meta__ = {
 [node name="Grundo" type="Polygon2D" parent="Planko"]
 
 z/z = -2
-polygon = Vector2Array( 9212.58, -3967.44, 6656, -3968, 6656, -8064, -5760, -8064, -5760, -3968, -8320, -3968, -8320, 256, -5760, 256, -5760, 4352, 6656, 4352, 6656, 256, 9216, 256, 9216, -3968, 9844.15, -4605.16, 9856, 896, 7296, 896, 7296, 4992, -6400, 4992, -6400, 896, -8960, 896, -8960, -4608, -6400, -4608, -6400, -8704, 7296, -8704, 7296, -4608, 9856, -4608 )
+polygon = Vector2Array( 896, -8704, 896, -8064, 6656, -8064, 6656, -3968, 9216, -3968, 9216, -2304, 9856, -2304, 9856, -4608, 7296, -4608, 7296, -8704 )
+uv = Vector2Array(  )
+color = Color( 0.737255, 0.666667, 0.643137, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 200.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Grundo1" type="Polygon2D" parent="Planko"]
+
+z/z = -2
+polygon = Vector2Array( 0, -8704, 0, -8064, -5760, -8064, -5760, -3968, -8320, -3968, -8320, 256, -5760, 256, -5760, 4352, 6656, 4352, 6656, 256, 9216, 256, 9216, -1408, 9856, -1408, 9856, 896, 7296, 896, 7296, 4992, -6400, 4992, -6400, 896, -8960, 896, -8960, -4608, -6400, -4608, -6400, -8704 )
 uv = Vector2Array(  )
 color = Color( 0.737255, 0.666667, 0.643137, 1 )
 vertex_colors = ColorArray(  )
