@@ -27,6 +27,9 @@ func _on_Areo_body_enter( korpo ):
 			Bazo.Tempo_sono.play()
 		Bazo.Tempilo.set_wait_time(Bazo.Tempilo.get_time_left()+TIPO*5)
 		Bazo.Tempilo.start()
+		if Bazo.Tempilo.get_time_left() < 10:
+			Bazo.Tempilo_Sono.seek_pos(10.0-Bazo.Tempilo.get_time_left())
+			Bazo.Tempilo_Sono.play()
 		Kasxi.start()
 
 func _on_Kasxi_tween_complete( object, key ):
