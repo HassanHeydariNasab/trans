@@ -6,7 +6,7 @@
 [ext_resource path="res://Elementoj/Nitrogeno.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Elementoj/Papero.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Tegolaroj/Arboj.tres" type="TileSet" id=6]
-[ext_resource path="res://Muzikoj/Komiku_-_02_-_Level_1__Jump_and_shoot_stuff_101.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Muzikoj/Monplaisir_-_03_-_Level_3.ogg" type="AudioStream" id=7]
 
 [sub_resource type="GDScript" id=1]
 
@@ -75,6 +75,7 @@ transform/rot = -90.0
 
 [node name="Elementoj" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, -1280 )
 
 [node name="Tempo" parent="Elementoj" instance=ExtResource( 3 )]
@@ -295,7 +296,7 @@ __meta__ = {
 stream/stream = ExtResource( 7 )
 stream/play = false
 stream/loop = true
-stream/volume_db = 0.0
+stream/volume_db = 10.0
 stream/autoplay = true
 stream/paused = false
 stream/loop_restart_time = 0.0

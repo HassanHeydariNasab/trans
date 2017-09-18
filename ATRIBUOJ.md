@@ -22,6 +22,8 @@ Mortigxi: http://freesound.org/people/sicbm/sounds/348448/
 
 Nova Rekordo: https://freesound.org/people/martian/sounds/178886/
 
+Papero: http://freesound.org/people/gynation/sounds/82379/
+
 ## Muzikoj
 
 Menuo: http://freemusicarchive.org/music/Unheard_Music_Concepts/Home_1808/13_Angled_Insight
@@ -31,6 +33,8 @@ Nivelo 1: http://freemusicarchive.org/music/Komiku/ULTRA_PERSON_VOL1/Komiku_-_UL
 Nivelo 2: http://freemusicarchive.org/music/Komiku/ULTRA_PERSON_VOL1/Komiku_-_ULTRA_PERSON_VOL1_-_10_Level_3_-_Run_on_the_expressway
 
 Nivelo 3: http://freemusicarchive.org/music/Kevin_MacLeod/Funk_Sampler/Presenterator
+
+http://freemusicarchive.org/music/Monplaisir/Ride_Out_OST
 
 ## Bildoj
 

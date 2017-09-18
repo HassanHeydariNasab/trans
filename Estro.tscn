@@ -24,7 +24,7 @@
 [ext_resource path="res://Sonoj/51464__smcameron__bombexplosion.ogg" type="AudioStream" id=22]
 [ext_resource path="res://Sonoj/365623__cinningbao__0804-094043-metal-grinding-or-drilling-30secs.ogg" type="AudioStream" id=23]
 [ext_resource path="res://Tegolaroj/Arboj.tres" type="TileSet" id=24]
-[ext_resource path="res://Muzikoj/Komiku_-_02_-_Level_1__Jump_and_shoot_stuff_101.ogg" type="AudioStream" id=25]
+[ext_resource path="res://Muzikoj/Monplaisir_-_04_-_Level_4.ogg" type="AudioStream" id=25]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -656,7 +656,7 @@ __meta__ = {
 stream/stream = ExtResource( 25 )
 stream/play = false
 stream/loop = true
-stream/volume_db = 0.0
+stream/volume_db = 10.0
 stream/autoplay = true
 stream/paused = false
 stream/loop_restart_time = 0.0
