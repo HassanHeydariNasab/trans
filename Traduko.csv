@@ -1,30 +1,31 @@
-id,en
-Fontkodo:,Source code:
-Pri,About
-Agordoj,Settings
-Sonoj,Sounds
-Muzikoj,Musics
-Bone,OK
-Tempo finigxis!,Time is over!
-Vi mortigxis!,You were dead!
-Rekomencu,Restart
-Niveloj,Levels
-Sumo:,Sum:
-Pliu vian konservitan tempon al,Increase your saved time to
-Rekordo,Record
-Atribuoj:,Attributions:
-Nivelpakoj,Level Packs
-Acxeti,Buy
-Komencu,Start
-Urbeto,Town
-Fabriko,Factory
-Arbaro,Forest
-Kastelo,Castle
-Enkonduko,Introduction
-Turneto,Little Turn
-La Parko,The Park
-Labirinto,Maze
-La Halo,The Hall
-Estreto,Little Boss
-Longa Koridoro,Long Corridor
-Estrego,Big Boss
+id,eo,en
+Fontkodo:,Fontkodo:,Source code:
+Pri,Pri,About
+Agordoj,Agordoj,Settings
+Sonoj,Sonoj,Sounds
+Muzikoj,Muzikoj,Musics
+Bone,Bone,OK
+Tempo finigxis!,Tempo finiĝis!,Time is over!
+Vi mortigxis!,Vi mortiĝis!,You were dead!
+Rekomencu,Rekomencu,Restart
+Niveloj,Niveloj,Levels
+Sumo:,Sumo:,Sum:
+Pliu vian konservitan tempon al,Pliu vian konservitan tempon al,Increase your saved time to
+Rekordo,Rekordo,Record
+Atribuoj:,Atribuoj:,Attributions:
+Nivelpakoj,Nivelpakoj,Level Packs
+Acxeti,Aĉeti,Buy
+Komencu,Komencu,Start
+Baldaux,Baldaŭ,Coming Soon
+Urbeto,Urbeto,Town
+Fabriko,Fabriko,Factory
+Arbaro,Arbaro,Forest
+Kastelo,Kastelo,Castle
+Enkonduko,Enkonduko,Introduction
+Turneto,Turneto,Little Turn
+La Parko,La Parko,The Park
+Labirinto,Labirinto,Maze
+La Halo,La Halo,The Hall
+Estreto,Estreto,Little Boss
+Longa Koridoro,Longa Koridoro,Long Corridor
+Estrego,Estrego,Big Boss

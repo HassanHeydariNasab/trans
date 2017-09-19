@@ -139,7 +139,6 @@ max_lines_visible = -1
 
 [node name="Niveloj" type="Control" parent="."]
 
-editor/display_folded = true
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = false
@@ -168,7 +167,7 @@ custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "N0"
+text = "Baldaux"
 flat = false
 
 [node name="Tempo" type="Label" parent="Niveloj/N0"]
@@ -226,7 +225,7 @@ custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "N1"
+text = "Baldaux"
 flat = false
 
 [node name="Tempo" type="Label" parent="Niveloj/N1"]
@@ -284,7 +283,7 @@ custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "N2"
+text = "Baldaux"
 flat = false
 
 [node name="Tempo" type="Label" parent="Niveloj/N2"]
@@ -341,7 +340,7 @@ custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "N3"
+text = "Baldaux"
 flat = false
 
 [node name="Pakoj" type="HButtonArray" parent="."]
