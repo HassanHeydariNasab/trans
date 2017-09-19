@@ -4,10 +4,6 @@ onready var Niveloj = get_node("Niveloj")
 onready var Konservu = get_node("Konservu")
 onready var Kasxi = get_node("Konservu/Kasxi")
 
-var agordejo = "user://agordejo.cfg"
-onready var Agordejo = ConfigFile.new()
-const lingvoj = ["eo", "en"]
-
 var sumo = 0
 const tempoj = [
 		[0,0,0,0],
@@ -19,14 +15,14 @@ const tempoj = [
 var pakoj = []
 
 func _init():
-	var Agordejo = ConfigFile.new()
-	Agordejo.load(agordejo)
-	var lingvo_indekso = Agordejo.get_value("Lingvo", "lingvo")
-	if TranslationServer.get_locale() != lingvoj[lingvo_indekso]:
-		TranslationServer.set_locale(lingvoj[lingvo_indekso])
+	var lingvo = Tutmonda.Agordejo.get_value("Lingvo", "lingvo")
+	if TranslationServer.get_locale() != lingvo:
+		TranslationServer.set_locale(lingvo)
 
 func _ready():
-	Agordejo.load(agordejo)
+	if not (Tutmonda.rekordita or Tutmonda.jxus_pasita):
+		get_node("Enveno_sono").set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Sonoj", true))
+	get_node("Fonmuziko").set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Muzikoj", true))
 	pakoj = [
 			[tr("Enkonduko"), tr("Turneto"), tr("La Parko"), tr("Estreto")],
 			[],
@@ -49,16 +45,16 @@ func _ready():
 			)
 			Novrekordo_Aperi.start()
 			Novrekordo.show()
-			Novrekordo.get_node("Sono").play()
+			Novrekordo.get_node("Sono").set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Sonoj", true))
 		Nivelo.set_text(pakoj[Tutmonda.pako][N])
 		if N != 3:
 			Nivelo.get_node("Tempo").set_text(
-				str(Agordejo.get_value("Niveloj", "P"+str(Tutmonda.pako)+"N"+str(N), 0))+"s"
+				str(Tutmonda.Agordejo.get_value("Niveloj", "P"+str(Tutmonda.pako)+"N"+str(N), 0))+"s"
 			)
-			sumo += Agordejo.get_value("Niveloj",
+			sumo += Tutmonda.Agordejo.get_value("Niveloj",
 			 		"P"+str(Tutmonda.pako)+"N"+str(N), 0)
 		else:
-			if Agordejo.get_value("Niveloj", "P"+str(Tutmonda.pako)+"N"+str(N)):
+			if Tutmonda.Agordejo.get_value("Niveloj", "P"+str(Tutmonda.pako)+"N"+str(N)):
 				var Pasita = get_node("Pasita")
 				var Pasita_Aperi = get_node("Pasita/Aperi")
 				Pasita.show()
@@ -69,7 +65,7 @@ func _ready():
 					0.75, Tween.TRANS_QUINT, Tween.EASE_IN
 					)
 					Pasita_Aperi.start()
-					get_node("Novrekordo/Sono").play()
+					get_node("Novrekordo/Sono").set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Sonoj", true))
 		Nivelo.connect("pressed", self, "_on_Nivelo_pressed", [Nivelo])
 	get_node("Sumo").set_text(str(sumo))
 	Kasxi.interpolate_property(Konservu, "visibility/opacity", 1,0,
@@ -102,3 +98,6 @@ func _on_Kasxi_tween_complete( object, key ):
 func _on_Pakoj_button_selected( idx ):
 	Tutmonda.pako = idx
 	get_tree().reload_current_scene()
+
+func _on_Agordoj_pressed():
+	get_tree().change_scene("res://Agordoj.tscn")

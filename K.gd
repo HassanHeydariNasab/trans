@@ -45,7 +45,7 @@ func _fixed_process(delta):
 		move(Vector2(RAPIDEGO*cos(get_rot()), -RAPIDEGO*sin(get_rot())))
 		Fumo.set("color/color","1E88E5EE")
 		if not Nitrogensono.is_playing():
-			Nitrogensono.play()
+			Nitrogensono.set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Sonoj", true))
 	else:
 		Fumo.set("color/color","FFFFFFFF")
 		Nitrogensono.stop()
@@ -60,7 +60,7 @@ func _process(delta):
 		Sparko.set_rot(get_rot())
 		Sparko.set_emitting(true)
 		if not Sparko_Sono.is_playing():
-			Sparko_Sono.play()
+			Sparko_Sono.set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Sonoj", true))
 	else:
 		Sparko.set_emitting(false)
 		Sparko_Sono.stop()
@@ -69,7 +69,7 @@ func fortigxi():
 	set_collision_mask_bit(0,false)
 	Fortigxi.resume(Aspekto, "modulate")
 	Tempilo_forto.start()
-	Fortsono.play()
+	Fortsono.set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Sonoj", true))
 
 func _on_Tempilo_forto_timeout():
 	set_collision_mask_bit(0,true)

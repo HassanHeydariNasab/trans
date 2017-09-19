@@ -15,10 +15,6 @@ onready var Tempo_sono = get_node("Tempo_sono")
 onready var Nitrogeno_sono = get_node("Nitrogeno_sono")
 onready var Tempilo_Sono = get_node("Tempilo/Sono")
 
-
-var agordejo = "user://agordejo.cfg"
-onready var Agordejo = ConfigFile.new()
-
 var tempo = 0
 var minuto = 0
 var sekundo = 0
@@ -28,18 +24,18 @@ var L2 = Vector2()
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)
-	Agordejo.load(agordejo)
 	K.set_global_pos(Vector2(400,500))
 	K.set_global_rot(deg2rad(90))
 	add_child(load("res://Niveloj/P%dN%d.tscn" % [Tutmonda.pako, Tutmonda.nivelo]).instance())
 	Nivelo = get_node("Nivelo")
 	Tempilo.set_wait_time(Nivelo.tempo)
 	Tempilo.start()
+	Nivelo.get_node("Fonmuziko").set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Muzikoj", true))
 	move_child(Nivelo,0)
 	Finejo1 = Nivelo.get_node("Finejo1")
 	if Nivelo.has_node("Finejo2"):
 		Finejo2 = Nivelo.get_node("Finejo2")
-	var rekordo = Agordejo.get_value("Niveloj", "P"+str(Tutmonda.pako)+"N"+str(Tutmonda.nivelo), null)
+	var rekordo = Tutmonda.Agordejo.get_value("Niveloj", "P"+str(Tutmonda.pako)+"N"+str(Tutmonda.nivelo), null)
 	if rekordo != null:
 		minuto = "%02d" % (rekordo/60)
 		sekundo = "%02d" % (rekordo%60)
@@ -56,7 +52,7 @@ func _process(delta):
 	tempo = int(Tempilo.get_time_left())
 	if tempo < 10:
 		if not Tempilo_Sono.is_playing():
-			Tempilo_Sono.play()
+			Tempilo_Sono.set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Sonoj", true))
 	else:
 		Tempilo_Sono.stop()
 	minuto = "%02d" % (tempo/60)

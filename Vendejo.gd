@@ -1,9 +1,5 @@
 extends Node2D
 
-var agordejo = "user://agordejo.cfg"
-onready var Agordejo = ConfigFile.new()
-const lingvoj = ["eo", "en"]
-
 onready var Tempo = get_node("Tempo")
 onready var Nitrogeno_Nombroj = get_node("Nitrogeno/Nombroj")
 onready var Bombo_Nombroj = get_node("Bombo/Nombroj")
@@ -18,9 +14,9 @@ func _ready():
 	Tutmonda.nitrogenoj = 0
 	Tutmonda.bomboj = 0
 	get_tree().set_auto_accept_quit(false)
-	Agordejo.load(agordejo)
+	get_node("Enveno_sono").set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Sonoj", true))
 	for N in range(3):
-		sumo += Agordejo.get_value("Niveloj", "P"+str(Tutmonda.pako)+"N"+str(N),0)
+		sumo += Tutmonda.Agordejo.get_value("Niveloj", "P"+str(Tutmonda.pako)+"N"+str(N),0)
 	minuto = "%02d" % (sumo/60)
 	sekundo = "%02d" % (sumo%60)
 	Tempo.set_text(str(minuto)+":"+str(sekundo))
@@ -37,7 +33,7 @@ func _on_Nitrogeno_pressed():
 		Tempo.set_text(str(minuto)+":"+str(sekundo))
 		Tutmonda.nitrogenoj += 1
 		Nitrogeno_Nombroj.set_text(str(Tutmonda.nitrogenoj)+"/5")
-		Nitrogeno_Sono.play()
+		Nitrogeno_Sono.set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Sonoj", true))
 
 func _on_Bombo_pressed():
 	if sumo >= 5 and Tutmonda.bomboj < 10:
@@ -47,7 +43,7 @@ func _on_Bombo_pressed():
 		Tempo.set_text(str(minuto)+":"+str(sekundo))
 		Tutmonda.bomboj += 1
 		Bombo_Nombroj.set_text(str(Tutmonda.bomboj)+"/10")
-		Bombo_Sono.play()
+		Bombo_Sono.set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Sonoj", true))
 
 func _on_Komencu_pressed():
 	get_tree().change_scene("res://Estro.tscn")

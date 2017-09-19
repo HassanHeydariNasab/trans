@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)
+	get_node("Enveno_sono").set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Sonoj", true))
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:

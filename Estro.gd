@@ -12,10 +12,6 @@ onready var Nitrogeno_sono = get_node("Nitrogeno_sono")
 onready var Bombo_sono = get_node("Bombo_sono")
 onready var Bombajxo = preload("res://Elementoj/Bombajxo.tscn")
 
-
-var agordejo = "user://agordejo.cfg"
-onready var Agordejo = ConfigFile.new()
-
 var tempo = 0
 var minuto = 0
 var sekundo = 0
@@ -23,7 +19,6 @@ var L = Vector2()
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)
-	Agordejo.load(agordejo)
 	K.set_global_pos(Vector2(400,500))
 	K.set_global_rot(deg2rad(90))
 	K.nitrogenoj += Tutmonda.nitrogenoj*60
@@ -32,6 +27,7 @@ func _ready():
 	K.bomboj += Tutmonda.bomboj
 	if K.bomboj > 10:
 		K.bomboj = 10
+	get_node("Fonmuziko").set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Muzikoj", true))
 	set_process(true)
 
 func _notification(what):

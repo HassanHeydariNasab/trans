@@ -10,7 +10,7 @@ func _ready():
 
 func _on_Areo_body_enter( korpo ):
 	if korpo == K:
-		get_node("Sono").play()
+		get_node("Sono").set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Sonoj", true))
 		Montri.interpolate_property(self, "transform/scale",
 		Vector2(1,1), Vector2(6,6), 0.5, Tween.TRANS_QUAD,
 		Tween.EASE_IN
