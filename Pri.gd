@@ -16,3 +16,6 @@ func _on_Kodo_pressed():
 
 func _on_Atribuoj_pressed():
 	OS.shell_open("https://github.com/HassanHeydariNasab/trans/blob/master/ATRIBUOJ.md")
+
+func _on_Donaci_pressed():
+	OS.shell_open("bitcoin:1MkJyXh8y3ViXTAFhKUpXfgfECEfnZmLGY")
