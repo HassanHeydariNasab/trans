@@ -46,4 +46,4 @@ func _on_Bombo_pressed():
 		Bombo_Sono.set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Sonoj", true))
 
 func _on_Komencu_pressed():
-	get_tree().change_scene("res://Estro.tscn")
+	get_tree().change_scene("res://Bazo.tscn")

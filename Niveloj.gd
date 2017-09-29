@@ -25,7 +25,7 @@ func _ready():
 	get_node("Fonmuziko").set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Muzikoj", true))
 	pakoj = [
 			[tr("Enkonduko"), tr("Turneto"), tr("La Parko"), tr("Estreto")],
-			[],
+			[tr("Enirejo"), tr("Gvardioj"), tr("La Produktejo"), tr("Estroj")],
 			[],
 			[tr("Longa Koridoro"), tr("La Halo"), tr("Labirinto"), tr("Estrego")]
 		]

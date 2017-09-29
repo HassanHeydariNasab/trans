@@ -14,6 +14,10 @@ onready var Finejo2 = null
 onready var Tempo_sono = get_node("Tempo_sono")
 onready var Nitrogeno_sono = get_node("Nitrogeno_sono")
 onready var Tempilo_Sono = get_node("Tempilo/Sono")
+onready var Bomboj = get_node("Kanvaso/Kontroliloj/Bombi/Bomboj")
+onready var Bombo_sono = get_node("Bombo_sono")
+onready var Bombajxo = preload("res://Elementoj/Bombajxo.tscn")
+onready var Vivo = get_node("Kanvaso/Vivo")
 
 var tempo = 0
 var minuto = 0
@@ -26,17 +30,25 @@ func _ready():
 	get_tree().set_auto_accept_quit(false)
 	K.set_global_pos(Vector2(400,500))
 	K.set_global_rot(deg2rad(90))
+	K.nitrogenoj += Tutmonda.nitrogenoj*60
+	if K.nitrogenoj > 200:
+		K.nitrogenoj = 200
+	K.bomboj += Tutmonda.bomboj
+	if K.bomboj > 10:
+		K.bomboj = 10
 	add_child(load("res://Niveloj/P%dN%d.tscn" % [Tutmonda.pako, Tutmonda.nivelo]).instance())
 	Nivelo = get_node("Nivelo")
 	Tempilo.set_wait_time(Nivelo.tempo)
 	Tempilo.start()
+	if Tutmonda.nivelo == 3:
+		Tempo.hide()
 	Nivelo.get_node("Fonmuziko").set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Muzikoj", true))
 	move_child(Nivelo,0)
 	Finejo1 = Nivelo.get_node("Finejo1")
 	if Nivelo.has_node("Finejo2"):
 		Finejo2 = Nivelo.get_node("Finejo2")
 	var rekordo = Tutmonda.Agordejo.get_value("Niveloj", "P"+str(Tutmonda.pako)+"N"+str(Tutmonda.nivelo), null)
-	if rekordo != null:
+	if rekordo != null and Tutmonda.nivelo != 3:
 		minuto = "%02d" % (rekordo/60)
 		sekundo = "%02d" % (rekordo%60)
 		Rekordo.set_text(str(minuto)+":"+str(sekundo))
@@ -60,6 +72,8 @@ func _process(delta):
 	Tempo.set_text(str(minuto)+":"+str(sekundo))
 	Kamero.set_offset(K.get_global_pos()+Vector2(0,-100))
 	Nitrogenoj.set_value(K.nitrogenoj)
+	Bomboj.set_text(str(K.bomboj))
+	Vivo.set_value(K.vivo)
 	L1 = Finejo1.get_global_pos() - K.get_global_pos()
 	if Finejo2 != null:
 		L2 = Finejo2.get_global_pos() - K.get_global_pos()

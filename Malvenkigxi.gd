@@ -13,10 +13,7 @@ func _notification(what):
 		get_tree().change_scene("res://Niveloj.tscn")
 
 func _on_Rekomencu_pressed():
-	if Tutmonda.nivelo == 3:
-		get_tree().change_scene("res://Estro.tscn")
-	else:
-		get_tree().change_scene("res://Bazo.tscn")
+	get_tree().change_scene("res://Bazo.tscn")
 
 func _on_Niveloj_pressed():
 	get_tree().change_scene("res://Niveloj.tscn")

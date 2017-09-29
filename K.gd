@@ -33,7 +33,7 @@ func _input(event):
 	if event.is_action_pressed("bombi") and bomboj > 0:
 		bomboj -= 1
 		var Bombajxo_ = get_node("/root/Bazo").Bombajxo.instance()
-		get_node("/root/Bazo/Elementoj").add_child(Bombajxo_)
+		get_node("/root/Bazo/Bombajxoj").add_child(Bombajxo_)
 		Bombajxo_.set_global_pos(get_global_pos())
 		Bombajxo_.set_rot(get_rot())
 		
