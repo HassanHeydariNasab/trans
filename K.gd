@@ -38,6 +38,20 @@ func _input(event):
 		Bombajxo_.set_rot(get_rot())
 		
 
+func angle360(angle):
+	if angle > 0:
+		return angle
+	else:
+		return angle +360
+
+func anglediff(angle):
+	if abs(angle) < 180:
+		return angle
+	elif angle < 0:
+		return angle + 360
+	elif angle > 0:
+		return angle - 360
+
 func _fixed_process(delta):
 	move(Vector2(RAPIDO*cos(get_rot()), -RAPIDO*sin(get_rot())))
 	if Input.is_action_pressed("rapidi") and nitrogenoj > 0:
@@ -49,6 +63,31 @@ func _fixed_process(delta):
 	else:
 		Fumo.set("color/color","FFFFFFFF")
 		Nitrogensono.stop()
+	if Input.is_action_pressed("turni_touch"):
+		# get touch event position /mouse position
+		var touch_pos = get_viewport().get_mouse_pos()
+		# offset of K
+		var K_shift = Vector2(400,640)
+		# touch_pos becomes relative coordinate to K
+		touch_pos -= K_shift
+		#calc angle in degree
+		var angle = rad2deg(atan2(touch_pos.y, -touch_pos.x))
+		var angle_K = self.get_rotd()
+		# shift angle to 0-360 degree
+		angle = angle360(angle)
+		angle_K = angle360(angle_K)
+		
+		# get angle difference
+		var delta_angle = angle_K - angle
+		# to turn in shorter direction
+		delta_angle = anglediff(delta_angle)
+		var abs_angle = abs(delta_angle)  # to make for small angle the movement smooth
+		if abs_angle > 3:
+			abs_angle = 3
+		if delta_angle > 0: # turn right
+			rotate(deg2rad(abs_angle))
+		else: # turn left
+			rotate(deg2rad(-abs_angle))
 	if Input.is_action_pressed("turni_dekstre"):
 		rotate(deg2rad(-3))
 	elif Input.is_action_pressed("turni_maldekstre"):

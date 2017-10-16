@@ -299,7 +299,6 @@ enabled = true
 [node name="M" parent="Navo" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 4112, -1296 )
-transform/scale = Vector2( 2, 2 )
 
 [node name="Halti" type="Timer" parent="Navo"]
 
@@ -329,7 +328,6 @@ drag_margin/bottom = 0.2
 
 [node name="Kanvaso" type="CanvasLayer" parent="."]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -452,6 +450,7 @@ percent/visible = false
 
 [node name="Bomboj" type="Label" parent="Kanvaso"]
 
+editor/display_folded = true
 anchor/left = 1
 anchor/right = 1
 focus/ignore_mouse = false
@@ -479,7 +478,6 @@ texture = ExtResource( 18 )
 
 [node name="Montrilo" type="Control" parent="Kanvaso"]
 
-editor/display_folded = true
 anchor/left = 3
 anchor/top = 3
 anchor/right = 3
