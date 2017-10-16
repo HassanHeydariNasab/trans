@@ -38,7 +38,7 @@ border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=3]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -370,7 +370,7 @@ margin/left = 0.0
 margin/top = 50.0
 margin/right = 0.0
 margin/bottom = 90.0
-custom_styles/fg = SubResource( 4 )
+custom_styles/fg = SubResource( 3 )
 range/min = 0.0
 range/max = 200.0
 range/step = 1.0
