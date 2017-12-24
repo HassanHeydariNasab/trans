@@ -8,14 +8,17 @@ onready var Nitrogensono = get_node("Nitrogensono")
 onready var Fortsono = get_node("Fortsono")
 onready var Sparko = get_node("/root/Bazo/Sparko")
 onready var Sparko_Sono = get_node("/root/Bazo/Sparko/Sono")
+onready var Duoblfrapeto = get_node("/root/Bazo/Kanvaso/Kontroliloj/Duoblfrapeto")
 
 const RAPIDO = 8
 const RAPIDEGO = 14
 var nitrogenoj = 0
 var vivo = 200
-var bomboj = 0
+var bomboj = 10
 
 func _ready():
+	Duoblfrapeto.stop()
+	Input.action_release("rapidi")
 	Fortigxi.interpolate_property(Aspekto, "modulate",
 	Color("000000"), Color("B71C1C"),
 	0.3, Tween.TRANS_QUART, Tween.TRANS_LINEAR
@@ -26,8 +29,7 @@ func _ready():
 	)
 	set_process(true)
 	set_fixed_process(true)
-	if Tutmonda.nivelo == 3:
-		set_process_input(true)
+	set_process_input(true)
 
 func _input(event):
 	if event.is_action_pressed("bombi") and bomboj > 0:
@@ -36,7 +38,13 @@ func _input(event):
 		get_node("/root/Bazo/Bombajxoj").add_child(Bombajxo_)
 		Bombajxo_.set_global_pos(get_global_pos())
 		Bombajxo_.set_rot(get_rot())
-		
+	elif event.type == InputEvent.MOUSE_BUTTON:
+		if Duoblfrapeto.get_time_left() > 0 and event.is_pressed():
+			Duoblfrapeto.stop()
+			Input.action_press("rapidi")
+		else:
+			Duoblfrapeto.start()
+			Input.action_release("rapidi")
 
 func angle360(angle):
 	if angle > 0:

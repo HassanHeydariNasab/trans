@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=1]
+[gd_scene load_steps=22 format=1]
 
 [ext_resource path="res://Bazo.gd" type="Script" id=1]
 [ext_resource path="res://K.tscn" type="PackedScene" id=2]
@@ -10,15 +10,14 @@
 [ext_resource path="res://Butonoj/turni_maldekstre.png" type="Texture" id=8]
 [ext_resource path="res://Butonoj/turni_maldekstre_premita.png" type="Texture" id=9]
 [ext_resource path="res://Elementoj/bombo.png" type="Texture" id=10]
-[ext_resource path="res://Butonoj/bombi.png" type="Texture" id=11]
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=12]
-[ext_resource path="res://Elementoj/rekomenci.png" type="Texture" id=13]
-[ext_resource path="res://Sonoj/268185__andychristen__wristwatch-tic-tac__KAJ__111331__j1987__flameclic.ogg" type="AudioStream" id=14]
-[ext_resource path="res://Sonoj/371878__mafon2__trickle-clicker.ogg" type="AudioStream" id=15]
-[ext_resource path="res://Sonoj/365623__cinningbao__0804-094043-metal-grinding-or-drilling-30secs.ogg" type="AudioStream" id=16]
-[ext_resource path="res://Tegolaroj/Plankoj.tres" type="TileSet" id=17]
-[ext_resource path="res://Sonoj/132025__user1994__take-it.ogg" type="AudioStream" id=18]
-[ext_resource path="res://Sonoj/51464__smcameron__bombexplosion.ogg" type="AudioStream" id=19]
+[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=11]
+[ext_resource path="res://Elementoj/rekomenci.png" type="Texture" id=12]
+[ext_resource path="res://Sonoj/268185__andychristen__wristwatch-tic-tac__KAJ__111331__j1987__flameclic.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Sonoj/371878__mafon2__trickle-clicker.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Sonoj/365623__cinningbao__0804-094043-metal-grinding-or-drilling-30secs.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Tegolaroj/Plankoj.tres" type="TileSet" id=16]
+[ext_resource path="res://Sonoj/132025__user1994__take-it.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Sonoj/51464__smcameron__bombexplosion.ogg" type="AudioStream" id=18]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -121,6 +120,7 @@ margin/bottom = 1160.0
 
 [node name="Rapidi" type="TouchScreenButton" parent="Kanvaso/Kontroliloj"]
 
+visibility/visible = false
 visibility/opacity = 0.4
 transform/pos = Vector2( 295, 958 )
 transform/scale = Vector2( 0.804688, 0.804688 )
@@ -136,6 +136,7 @@ visibility_mode = 0
 
 [node name="Turnu_dekstre" type="TouchScreenButton" parent="Kanvaso/Kontroliloj"]
 
+visibility/visible = false
 visibility/opacity = 0.4
 transform/pos = Vector2( 543, 940 )
 normal = ExtResource( 6 )
@@ -151,8 +152,8 @@ visibility_mode = 0
 [node name="Turnu_touch" type="TouchScreenButton" parent="Kanvaso/Kontroliloj"]
 
 visibility/opacity = 0.4
-transform/pos = Vector2( 2.4975, 187.589 )
-transform/scale = Vector2( 791.126, 746.604 )
+transform/pos = Vector2( 2.4975, 218.66 )
+transform/scale = Vector2( 791.126, 976.991 )
 normal = null
 pressed = null
 bitmask = null
@@ -165,6 +166,7 @@ visibility_mode = 0
 
 [node name="Turnu_maldekstre" type="TouchScreenButton" parent="Kanvaso/Kontroliloj"]
 
+visibility/visible = false
 visibility/opacity = 0.4
 transform/pos = Vector2( 0, 940 )
 normal = ExtResource( 8 )
@@ -184,7 +186,7 @@ visibility/opacity = 0.4
 transform/pos = Vector2( 624, 736 )
 transform/scale = Vector2( 1.5, 1.5 )
 normal = ExtResource( 10 )
-pressed = ExtResource( 11 )
+pressed = ExtResource( 10 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -206,7 +208,7 @@ margin/left = 110.0
 margin/top = 29.0
 margin/right = -24.0
 margin/bottom = 154.0
-custom_fonts/font = ExtResource( 12 )
+custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "999"
 align = 1
@@ -214,6 +216,13 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="Duoblfrapeto" type="Timer" parent="Kanvaso/Kontroliloj"]
+
+process_mode = 1
+wait_time = 0.3
+one_shot = true
+autostart = false
 
 [node name="Tempo" type="Label" parent="Kanvaso"]
 
@@ -227,7 +236,7 @@ margin/left = 279.0
 margin/top = 98.0
 margin/right = 360.0
 margin/bottom = 175.0
-custom_fonts/font = ExtResource( 12 )
+custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -251,7 +260,7 @@ margin/left = 590.0
 margin/top = 160.0
 margin/right = 49.0
 margin/bottom = 237.0
-custom_fonts/font = ExtResource( 12 )
+custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -273,7 +282,7 @@ margin/left = 10.0
 margin/top = -50.0
 margin/right = -83.0
 margin/bottom = 27.0
-custom_fonts/font = ExtResource( 12 )
+custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -345,7 +354,7 @@ margin/left = 10.0
 margin/top = 50.0
 margin/right = 82.0
 margin/bottom = 127.0
-custom_fonts/font = ExtResource( 12 )
+custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color = Color( 0.458824, 0.458824, 0.458824, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
@@ -370,7 +379,7 @@ margin/bottom = 244.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 13 )
+icon = ExtResource( 12 )
 flat = false
 
 [node name="Vivo" type="ProgressBar" parent="Kanvaso"]
@@ -396,7 +405,7 @@ percent/visible = false
 
 [node name="Tempo_sono" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 14 )
+stream/stream = ExtResource( 13 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 14.0
@@ -407,7 +416,7 @@ stream/buffering_ms = 500
 
 [node name="Nitrogeno_sono" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 15 )
+stream/stream = ExtResource( 14 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 14.0
@@ -450,7 +459,7 @@ color/color = Color( 1, 0.768627, 0, 1 )
 
 [node name="Sono" type="StreamPlayer" parent="Sparko"]
 
-stream/stream = ExtResource( 16 )
+stream/stream = ExtResource( 15 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 5.0
@@ -465,7 +474,7 @@ stream/buffering_ms = 500
 
 transform/scale = Vector2( 4, 4 )
 mode = 0
-tile_set = ExtResource( 17 )
+tile_set = ExtResource( 16 )
 cell/size = Vector2( 32, 32 )
 cell/quadrant_size = 2
 cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -482,7 +491,7 @@ tile_data = IntArray(  )
 
 [node name="Bombo_sono" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 18 )
+stream/stream = ExtResource( 17 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 12.0
@@ -493,7 +502,7 @@ stream/buffering_ms = 500
 
 [node name="Bombajxo_sono" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 19 )
+stream/stream = ExtResource( 18 )
 stream/play = true
 stream/loop = false
 stream/volume_db = 10.0
