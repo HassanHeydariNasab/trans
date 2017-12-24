@@ -30,18 +30,18 @@ func _ready():
 	get_tree().set_auto_accept_quit(false)
 	K.set_global_pos(Vector2(400,500))
 	K.set_global_rot(deg2rad(90))
-	K.nitrogenoj += Tutmonda.nitrogenoj*60
-	if K.nitrogenoj > 200:
-		K.nitrogenoj = 200
-	K.bomboj += Tutmonda.bomboj
-	if K.bomboj > 10:
-		K.bomboj = 10
+	if Tutmonda.nivelo == 3:
+		Tempo.hide()
+		K.nitrogenoj += Tutmonda.nitrogenoj*60
+		if K.nitrogenoj > 200:
+			K.nitrogenoj = 200
+		K.bomboj += Tutmonda.bomboj
+		if K.bomboj > 10:
+			K.bomboj = 10
 	add_child(load("res://Niveloj/P%dN%d.tscn" % [Tutmonda.pako, Tutmonda.nivelo]).instance())
 	Nivelo = get_node("Nivelo")
 	Tempilo.set_wait_time(Nivelo.tempo)
 	Tempilo.start()
-	if Tutmonda.nivelo == 3:
-		Tempo.hide()
 	Nivelo.get_node("Fonmuziko").set("stream/play", Tutmonda.Agordejo.get_value("Agordoj", "Muzikoj", true))
 	move_child(Nivelo,0)
 	Finejo1 = Nivelo.get_node("Finejo1")
