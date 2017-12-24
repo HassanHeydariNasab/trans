@@ -14,11 +14,12 @@ const RAPIDO = 8
 const RAPIDEGO = 14
 var nitrogenoj = 0
 var vivo = 200
-var bomboj = 10
+var bomboj = 0
 
 func _ready():
 	Duoblfrapeto.stop()
-	Input.action_release("rapidi")
+	if Input.is_action_pressed("rapidi"):
+		Input.action_release("rapidi")
 	Fortigxi.interpolate_property(Aspekto, "modulate",
 	Color("000000"), Color("B71C1C"),
 	0.3, Tween.TRANS_QUART, Tween.TRANS_LINEAR
@@ -44,7 +45,8 @@ func _input(event):
 			Input.action_press("rapidi")
 		else:
 			Duoblfrapeto.start()
-			Input.action_release("rapidi")
+			if Input.is_action_pressed("rapidi"):
+				Input.action_release("rapidi")
 
 func angle360(angle):
 	if angle > 0:

@@ -183,7 +183,7 @@ visibility_mode = 0
 
 editor/display_folded = true
 visibility/opacity = 0.4
-transform/pos = Vector2( 624, 736 )
+transform/pos = Vector2( 619.456, 849.604 )
 transform/scale = Vector2( 1.5, 1.5 )
 normal = ExtResource( 10 )
 pressed = ExtResource( 10 )
