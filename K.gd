@@ -32,15 +32,21 @@ func _ready():
 	set_fixed_process(true)
 	set_process_input(true)
 
+func bombi():
+	bomboj -= 1
+	var Bombajxo_ = get_node("/root/Bazo").Bombajxo.instance()
+	get_node("/root/Bazo/Bombajxoj").add_child(Bombajxo_)
+	Bombajxo_.set_global_pos(get_global_pos())
+	Bombajxo_.set_rot(get_rot())
+
 func _input(event):
 	if event.is_action_pressed("bombi") and bomboj > 0:
-		bomboj -= 1
-		var Bombajxo_ = get_node("/root/Bazo").Bombajxo.instance()
-		get_node("/root/Bazo/Bombajxoj").add_child(Bombajxo_)
-		Bombajxo_.set_global_pos(get_global_pos())
-		Bombajxo_.set_rot(get_rot())
+		bombi()
 	elif event.type == InputEvent.MOUSE_BUTTON:
-		if Duoblfrapeto.get_time_left() > 0 and event.is_pressed():
+		if event.button_index == BUTTON_RIGHT:
+			if event.is_pressed() and bomboj > 0:
+				bombi()
+		elif Duoblfrapeto.get_time_left() > 0 and event.is_pressed():
 			Duoblfrapeto.stop()
 			Input.action_press("rapidi")
 		else:

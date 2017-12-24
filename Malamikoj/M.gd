@@ -32,6 +32,8 @@ func _process(delta):
 		var d = get_pos().distance_to(vojo[0])
 		if d > 2:
 			set_pos(get_pos().linear_interpolate(vojo[0], (RAPIDO * delta)/d))
+#			move_to(get_pos().linear_interpolate(vojo[0], (RAPIDO/100 * delta)/d))
+#			move(Vector2(0,0))
 		else:
 			vojo.remove(0)
 			look_at(celo)
