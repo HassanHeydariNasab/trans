@@ -48,7 +48,8 @@ func _input(event):
 		if event.button_index == BUTTON_RIGHT:
 			if event.is_pressed() and bomboj > 0:
 				bombi()
-		elif Duoblfrapeto.get_time_left() > 0 and event.is_pressed():
+		elif Duoblfrapeto.get_time_left() > 0 and event.is_pressed() and\
+			nitrogenoj > 0:
 			Duoblfrapeto.stop()
 			Input.action_press("rapidi")
 		else:
