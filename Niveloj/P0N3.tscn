@@ -7,7 +7,7 @@
 [ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=5]
 [ext_resource path="res://Elementoj/Nitrogeno.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Elementoj/Bombo.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Muzikoj/Monplaisir_-_01_-_Level_1.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Muzikoj/Monplaisir_-_04_-_Level_4.ogg" type="AudioStream" id=8]
 
 [sub_resource type="GDScript" id=1]
 
@@ -111,6 +111,7 @@ invert/border = 100.0
 
 [node name="Elementoj" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, -1280 )
 
 [node name="Nitrogeno10" parent="Elementoj" instance=ExtResource( 6 )]
