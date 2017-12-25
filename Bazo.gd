@@ -35,6 +35,8 @@ func _ready():
 	K.set_global_rot(deg2rad(90))
 	if Tutmonda.nivelo == 3:
 		Tempo.hide()
+		K.nitrogenoj = 0
+		K.bomboj = 0
 		K.nitrogenoj += Tutmonda.nitrogenoj*60
 		if K.nitrogenoj > 200:
 			K.nitrogenoj = 200
