@@ -10,6 +10,8 @@ onready var Sparko = get_node("/root/Bazo/Sparko")
 onready var Sparko_Sono = get_node("/root/Bazo/Sparko/Sono")
 onready var Duoblfrapeto = get_node("/root/Bazo/Kanvaso/Kontroliloj/Duoblfrapeto")
 
+var K_shift = Vector2()
+
 const RAPIDO = 8
 const RAPIDEGO = 14
 var nitrogenoj = 0
@@ -83,7 +85,7 @@ func _fixed_process(delta):
 		# get touch event position /mouse position
 		var touch_pos = get_viewport().get_mouse_pos()
 		# offset of K
-		var K_shift = Vector2(400,640)
+#		var K_shift = Vector2(400,600)
 		# touch_pos becomes relative coordinate to K
 		touch_pos -= K_shift
 		#calc angle in degree

@@ -8,6 +8,7 @@ var lingvo_elektita = null
 var bomboj = 0
 var nitrogenoj = 0
 var jxus_pasita = false
+var vidareo = null
 
 var agordejo = "user://agordejo.cfg"
 onready var Agordejo = ConfigFile.new()

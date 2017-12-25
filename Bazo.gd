@@ -28,6 +28,9 @@ var L2 = Vector2()
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)
+	Tutmonda.vidareo = get_viewport_rect()
+	K.K_shift = Vector2(Tutmonda.vidareo.size.x/2,
+						Tutmonda.vidareo.size.y/2)
 	K.set_global_pos(Vector2(400,500))
 	K.set_global_rot(deg2rad(90))
 	if Tutmonda.nivelo == 3:
@@ -70,7 +73,7 @@ func _process(delta):
 	minuto = "%02d" % (tempo/60)
 	sekundo = "%02d" % (tempo%60)
 	Tempo.set_text(str(minuto)+":"+str(sekundo))
-	Kamero.set_offset(K.get_global_pos()+Vector2(0,-100))
+	Kamero.set_offset(K.get_global_pos())
 	Nitrogenoj.set_value(K.nitrogenoj)
 	Bomboj.set_text(str(K.bomboj))
 	Vivo.set_value(K.vivo)
